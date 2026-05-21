@@ -1,0 +1,33 @@
+:root{
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --bg-main: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --wihte: #ffffff;
+    --tramsition: all 0.3s ease;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-item, .stat-card, .btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover {
+    transform: translateX(5px); /* Menüye gelince hafifçe yana kaysın */
+}

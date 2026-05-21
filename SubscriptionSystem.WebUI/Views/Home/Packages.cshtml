@@ -1,0 +1,131 @@
+@using System.Web
+@model IEnumerable<SubscriptionSystem.Domain.Entities.Plan>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Abonelik Paketleri";
+    // ViewBag'den gelen listeyi güvenli bir şekilde alıyoruz
+    var activePlanIds = ViewBag.UserPlanIds as List<int> ?? new List<int>();
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/packages.css" />
+    <style>
+        .confirm-note { display: block; margin-top: 10px; font-size: 0.9rem; color: #7048e8; font-weight: 600; background: #f3f0ff; padding: 8px; border-radius: 8px; text-align: center; }
+        .btn-subscribe { cursor: pointer; transition: 0.3s; }
+        .btn-subscribe:hover { opacity: 0.9; transform: scale(1.02); }
+        /* Süreyi uzat butonu için özel bir stil dokunuşu (isteğe bağlı) */
+        .btn-extend { background: #7048e8 !important; color: white !important; }
+    </style>
+}
+
+<div class="packages-wrapper" data-aos="fade-up">
+    <div class="packages-header">
+        <h1>Abonelik Paketleri</h1>
+        <p>Sizin için en uygun planı seçin, avantajları yakalayın.</p>
+    </div>
+
+    <div class="plans-grid">
+        @foreach (var plan in Model)
+        {
+            // Kullanıcı bu plana zaten sahip mi?
+            bool isOwned = activePlanIds.Contains(plan.Id);
+
+            <div class="plan-card @(plan.IsPopular ? "popular" : "")" data-aos="zoom-in">
+                @if (plan.IsPopular)
+                {
+                    <div class="popular-badge">En Çok Tercih Edilen</div>
+                }
+                
+                <div class="plan-name">@plan.Title</div>
+                <div class="plan-price">
+                    <span class="currency">₺</span>
+                    <span class="amount">@plan.Price.ToString("N0")</span>
+                    <span class="duration">/@plan.DuraitonInMonths Gün</span>
+                </div>
+                
+                <div class="plan-features">
+                    <p class="plan-subtitle">@plan.SubTitle</p>
+                    <ul class="package-features">
+                        @if (!string.IsNullOrWhiteSpace(plan.Description))
+                        {
+                            var features = plan.Description.Split(',');
+                            foreach (var feature in features)
+                            {
+                                <li>@feature.Trim()</li>
+                            }
+                        }
+                        else
+                        {
+                            <li>Temel Özellikler Dahil</li>
+                        }
+                    </ul>
+                </div>
+
+                <form asp-action="Subscribe" asp-controller="Home" method="post">
+                    <input type="hidden" name="planId" value="@plan.Id" />
+                    <button type="button" class="btn-subscribe @(isOwned ? "btn-extend" : "")" 
+                            onclick="triggerConfirm(this, '@(HttpUtility.JavaScriptStringEncode(plan.Title))', '@plan.Price.ToString("N0")', @plan.Id, @isOwned.ToString().ToLower())">
+                        @if(isOwned) {
+                            <text>Süreyi Uzat</text>
+                        } else {
+                            @(plan.Price > 0 ? "Hemen Satın Al" : "Ücretsiz Başla")
+                        }
+                    </button>
+                </form>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function closeConfirmModal() {
+            const modal = document.getElementById('confirmModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function triggerConfirm(btn, title, price, planId, isAlreadyOwned) {
+            const modal = document.getElementById('confirmModal');
+            const confirmBtn = document.getElementById('confirmBtn');
+            const confirmMessageArea = document.getElementById('confirmMessage');
+            const confirmTitleArea = document.getElementById('confirmTitle');
+
+            // Mesaj mantığını senin istediğin "Uzatma" senaryosuna göre kuruyoruz
+            let message = "";
+            let subNote = "";
+            let modalTitle = "Satın Alma Onayı";
+
+            if (isAlreadyOwned) {
+                modalTitle = "Abonelik Uzatma";
+                message = `Zaten aktif bir <strong>${title}</strong> aboneliğiniz bulunuyor.`;
+                subNote = '<span class="confirm-note">Bu işlemi onaylarsanız, mevcut sürenizin üzerine ekleme yapılacaktır. Devam etmek istiyor musunuz?</span>';
+            } else {
+                message = `<strong>${title}</strong> paketini ${price} ₺ karşılığında satın almak istediğinize emin misiniz?`;
+            }
+
+            // Eğer özel modal varsa onu kullan, yoksa fallback olarak browser confirm kullan
+            if (modal && confirmBtn) {
+                confirmTitleArea.innerText = modalTitle;
+                confirmMessageArea.innerHTML = message + subNote;
+                modal.style.display = 'flex';
+
+                confirmBtn.onclick = function() {
+                    btn.closest('form').submit();
+                    closeConfirmModal();
+                };
+            } else {
+                let plainText = isAlreadyOwned 
+                    ? title + " paketini uzatmak istiyor musunuz?" 
+                    : title + " paketini onaylıyor musunuz?";
+                if (confirm(plainText)) {
+                    btn.closest('form').submit();
+                }
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('confirmModal');
+            if (event.target == modal) closeConfirmModal();
+        }
+    </script>
+}

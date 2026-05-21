@@ -1,0 +1,97 @@
+@model SubscriptionSystem.Domain.Entities.AppUser
+@{ ViewData["Title"] = "Profilim"; }
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/profile.css" />
+}
+
+<div class="profile-container" data-aos="fade-up">
+    <div class="profile-card">
+        
+        @* 🛡️ TEK BİR FORM: Her şeyi bu formun içine topladık usta *@
+        <form asp-action="UpdateProfile" method="post" enctype="multipart/form-data">
+            
+            <div class="profile-header">
+                <div class="pp-wrapper">
+                    <img src="@(string.IsNullOrEmpty(Model.ProfilePicture) ? "/img/default-user.png" : $"/img/profile/{Model.ProfilePicture}")" alt="user-pp" id="profilePreview" />
+                    @* Kameraya basınca alttaki gizli input tetiklenecek *@
+                    <label for="pp-upload" class="pp-edit-btn"><i class="fas fa-camera"></i></label>
+                </div>
+                <h2>@Model.FullName</h2>
+                <p>@Model.Email</p>
+            </div>
+
+            @* Gizli dosya seçici - name alanı Controller'daki parametre ile aynı olmalı (photo) *@
+            <input type="file" id="pp-upload" name="photo" onchange="previewImage(this)" accept="image/*" style="display: none;" />
+
+            <div class="form-group">
+                <label>Ad Soyad</label>
+                <input type="text" name="fullName" value="@Model.FullName" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label>E-posta</label>
+                <input type="email" name="email" value="@Model.Email" class="form-control" required />
+            </div>
+            
+            @* usta, bu butona basılmadığı sürece ne resim yüklenir ne bilgiler değişir, sayfa asla yenilenmez! *@
+            <button class="btn-lila-fill" type="submit">Bilgileri Güncelle</button>
+        </form>
+
+        <hr />
+
+        <button class="btn-ouline-danger" onclick="showPasswordModal()">Şifre Değiştir</button>
+    </div>
+</div>
+
+<div id="passwordModal" class="modal" style="display:none;">
+    <div class="modal-content profile-card">
+        <div class="modal-header">
+            <h3>Şifre Değiştir</h3>
+            <span class="close-modal" onclick="closePasswordModal()">&times;</span>
+        </div>
+        <form asp-action="ChangePassword" method="post">
+            <div class="form-group">
+                <label>Mevcut Şifre</label>
+                <input type="password" name="currentPassword" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label>Yeni Şifre</label>
+                <input type="password" name="newPassword" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label>Yeni Şifre Tekrar</label>
+                <input type="password" name="confirmPassword" class="form-control" required />
+            </div>
+            <button type="submit" class="btn-lila-fill">Şifreyi Güncelle</button>
+            <button type="button" class="btn-ouline-danger" onclick="closePasswordModal()">Vazgeç</button>
+        </form>
+    </div>
+</div>
+
+<script>
+// 🛡️ Sadece önizleme yapar, sunucuya hiçbir şey post etmez usta!
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profilePreview').src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function showPasswordModal() {
+    document.getElementById('passwordModal').style.display = 'flex';
+}
+
+function closePasswordModal() {
+    document.getElementById('passwordModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('passwordModal');
+    if (event.target == modal) {
+        closePasswordModal();
+    }
+}
+</script>

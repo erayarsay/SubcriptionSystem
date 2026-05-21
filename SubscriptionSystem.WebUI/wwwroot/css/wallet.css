@@ -1,0 +1,129 @@
+.wallet-wrapper{
+    padding: 2rem;
+}
+
+.wallet-header{
+    margin-bottom: 2.5rem;
+}
+
+.wallet-header h1{
+    color: #4b3d7a;
+    font-size: 2.2rem;
+}
+
+.wallet-header p{
+    color: #868e96;
+}
+
+.wallet-grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+}
+
+.balance-card{
+    background: linear-gradient(135deg, #7048e8 0%, #b197fc 100%);
+    border-radius: 24px;
+    padding: 2.5rem;
+    color: white;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(112, 72, 232, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-card::after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.card-chip{
+    width: 45px;
+    height: 35px;
+    background: #ffd43b;
+    border-radius: 6px;
+}
+
+.balance-display .label{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.balance-display .amount{
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.card-info{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.card-info .holder span{
+    display: block;
+    font-size: 0.79rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.action-card{
+    background: white;
+    border: 1px solid #e5dbff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.topup-options{
+    display: flex;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.btn-lila-outline{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #7048e8;
+    background: transparent;
+    color: #7048e8;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-lila-outline:hover{
+    background: #f3f0ff;
+}
+
+.btn-lila-fill{
+    width: 100%;
+    padding: 15px;
+    background: #7048e8;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-lila-fill:hover {
+    background: #5f3dc4;
+    transform: translateY(-2px);
+}
+
+.icon{
+    color: white;
+}

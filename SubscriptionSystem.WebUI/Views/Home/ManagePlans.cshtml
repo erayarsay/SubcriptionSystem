@@ -1,0 +1,243 @@
+@using System.Web
+@model IEnumerable<SubscriptionSystem.Domain.Entities.Plan>
+@{ 
+    Layout = "_Layout"; 
+    ViewData["Title"] = "Paket Yönetimi";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/admin-plans.css" />
+    <style>
+        .lila-ghost { background: #f3f0ff !important; opacity: 0.5; border: 2px dashed #7048e8 !important; }
+        .custom-table tbody tr { transition: transform 0.2s; }
+        .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .status-yes { background: #e3fcef; color: #00875a; }
+        .status-no { background: #ffebe6; color: #de350b; }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
+    <script>
+        // --- SÜRÜKLE BIRAK SIRALAMA ---
+        const el = document.querySelector('.custom-table tbody');
+        if (el) {
+            Sortable.create(el, {
+                animation: 150,
+                ghostClass: 'lila-ghost',
+                handle: '.fa-grip-lines', // Sadece ikonla sürüklensin
+                onEnd: function () {
+                    saveNewOrder();
+                }
+            });
+        }
+
+        function saveNewOrder() {
+            const rows = document.querySelectorAll('.custom-table tbody tr');
+            let orderData = [];
+            rows.forEach((row, index) => {
+                orderData.push({ id: parseInt(row.dataset.id), order: index });
+            });
+
+            fetch('/Home/UpdatePlanOrder', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            }).then(res => {
+                if(res.ok) showToast("Sıralama güncellendi!", "success");
+            });
+        }
+
+        // --- MODAL YÖNETİMİ ---
+        function openPlanModal(isEdit = false) {
+            const modal = document.getElementById('planModal');
+            const title = modal.querySelector('h3');
+            const form = modal.querySelector('form');
+            
+            if (!isEdit) {
+                title.innerText = "Yeni Paket Oluştur";
+                form.action = "/Home/CreatePlan";
+                form.reset();
+                form.querySelector('input[name="Id"]').value = "0";
+            }
+            modal.style.display = 'flex';
+        }
+
+        function closePlanModal() {
+            document.getElementById('planModal').style.display = 'none';
+        }
+
+        // --- DÜZENLEME (EDIT) FONKSİYONU ---
+        function editPlan(id, title, subTitle, price, duration, desc, isPop, order) {
+            openPlanModal(true);
+            const modal = document.getElementById('planModal');
+            const form = modal.querySelector('form');
+            
+            modal.querySelector('h3').innerText = "Paketi Düzenle";
+            form.action = "/Home/UpdatePlan";
+
+            form.querySelector('input[name="Id"]').value = id;
+            form.querySelector('input[name="Title"]').value = title;
+            form.querySelector('input[name="SubTitle"]').value = subTitle;
+            form.querySelector('input[name="Price"]').value = price.replace(',', '.');
+            form.querySelector('input[name="DuraitonInMonths"]').value = duration;
+            form.querySelector('textarea[name="Description"]').value = desc;
+            form.querySelector('input[name="IsPopular"]').checked = (isPop.toLowerCase() === 'true');
+            form.querySelector('input[name="OrderIndex"]').value = order;
+        }
+
+        // --- SİLME ONAY (CONFIRM) ---
+        let formToSubmit = null;
+        function askConfirm(btn, title, message) {
+            formToSubmit = btn.closest('form');
+            document.getElementById('confirmTitle').innerText = title;
+            document.getElementById('confirmMessage').innerText = message;
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            if (formToSubmit) {
+                const formData = new FormData(formToSubmit);
+                fetch(formToSubmit.action, {
+                    method: 'POST',
+                    body: formData
+                }).then(res => res.json())
+                  .then(data => {
+                      if(data.success) {
+                          showToast(data.message, 'success');
+                          const id = formData.get('id');
+                          document.querySelector(`tr[data-id="${id}"]`).remove();
+                      } else {
+                          showToast(data.message, 'error');
+                      }
+                      closeConfirmModal();
+                  });
+            }
+        });
+    </script>
+}
+
+<div class="admin-wrapper" data-aos="fade-up">
+    <div class="panel-header">
+        <h2>Paket Yönetimi</h2>
+        <button class="btn-lila-fill" onclick="openPlanModal()">
+            <span>+</span> Yeni Paket Ekle
+        </button>
+    </div>
+
+    <div class="table-container">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th style="width: 50px;">#</th>
+                    <th>Paket Adı</th>
+                    <th>Fiyat</th>
+                    <th>Süre</th>
+                    <th>Popüler</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var plan in Model) {
+                    <tr data-id="@plan.Id">
+                        <td><i class="fas fa-grip-lines" style="color: #ccc; cursor: grab;"></i></td>
+                        <td><strong>@plan.Title</strong></td>
+                        <td>@plan.Price.ToString("N2") ₺</td>
+                        <td>@plan.DuraitonInMonths Gün</td>
+                        <td>
+                            <span class="status-badge @(plan.IsPopular ? "status-yes" : "status-no")">
+                                @(plan.IsPopular ? "Evet" : "Hayır")
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-buttons-wrapper">
+                                <button class="btn-action btn-edit-new" 
+                                        onclick="editPlan('@plan.Id', 
+                                                          '@(HttpUtility.JavaScriptStringEncode(plan.Title))', 
+                                                          '@(HttpUtility.JavaScriptStringEncode(plan.SubTitle ?? ""))', 
+                                                          '@plan.Price', 
+                                                          '@plan.DuraitonInMonths', 
+                                                          '@(HttpUtility.JavaScriptStringEncode(plan.Description ?? ""))', 
+                                                          '@plan.IsPopular.ToString()', 
+                                                          '@plan.OrderIndex')">
+                                    Düzenle
+                                </button>
+                                <form asp-action="DeletePlan" asp-controller="Home" method="post" style="display:inline;">
+                                    <input type="hidden" name="id" value="@plan.Id" />
+                                    <button type="button" class="btn-action btn-delete-new" 
+                                            onclick="askConfirm(this, 'Paketi Sil', 'Bu paketi silmek istediğinize emin misiniz?')">
+                                        Sil
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @* --- MODAL ALANI --- *@
+    <div class="modal-overlay" id="planModal" style="display: none; align-items:center; justify-content:center; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;">
+        <div class="modal-content" style="background:white; padding:30px; border-radius:20px; width:500px; max-width:90%;">
+            <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3>Yeni Paket Oluştur</h3>
+                <button class="close-btn" onclick="closePlanModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <form asp-action="CreatePlan" asp-controller="Home" method="post">
+                <input type="hidden" name="Id" value="0" />
+                <input type="hidden" name="OrderIndex" value="0" />
+
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label style="display:block; margin-bottom:5px;">Paket Adı</label>
+                    <input type="text" name="Title" class="form-control" placeholder="Örn: Premium Üyelik" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;" />
+                </div>
+
+                <div class="form-row" style="display:flex; gap:10px; margin-bottom:15px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Fiyat (₺)</label>
+                        <input type="number" name="Price" step="0.01" class="form-control" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;" />
+                    </div>
+                    <div class="form-group" style="flex:1;">
+                        <label>Süre (Gün)</label>
+                        <input type="number" name="DuraitonInMonths" class="form-control" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label>Tanıtım Başlığı</label>
+                    <input type="text" name="SubTitle" class="form-control" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;" />
+                </div>
+
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label>Özellikler (Virgülle ayırın)</label>
+                    <textarea name="Description" rows="3" class="form-control" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group" style="margin-bottom:20px;">
+                    <input type="checkbox" name="IsPopular" id="IsPopularInput" value="true" />
+                    <label for="IsPopularInput">Popüler Paket</label>
+                </div>
+
+                <button type="submit" class="btn-lila-fill" style="width:100%; padding:12px; background:#7048e8; color:white; border:none; border-radius:12px; cursor:pointer;">Paketi Yayınla</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* --- ONAY MODALI (CONFIRM) --- *@
+<div id="confirmModal" class="modal-overlay" style="display: none; align-items:center; justify-content:center; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+    <div class="modal-content confirm-box" style="background:white; padding:30px; border-radius:20px; text-align:center; max-width:400px;">
+        <h3 id="confirmTitle" style="color:#7048e8; margin-bottom:15px;">İşlemi Onayla</h3>
+        <p id="confirmMessage" style="color: #4b3d7a; margin-bottom: 25px;">Emin misiniz?</p>
+        <div class="confirm-actions" style="display: flex; gap: 15px;">
+            <button class="btn-lila-outline" onclick="closeConfirmModal()" style="flex:1; padding:10px; border:1px solid #7048e8; background:none; color:#7048e8; border-radius:10px; cursor:pointer;">Vazgeç</button>
+            <button id="confirmBtn" style="flex:1; padding:10px; background:#ff4757; color:white; border:none; border-radius:10px; cursor:pointer;">Evet, Sil</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/bin/Debug/net10.0/SubscriptionSystem.Persistence.deps.json
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/bin/Debug/net10.0/SubscriptionSystem.Persistence.runtimeconfig.json
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/bin/Debug/net10.0/SubscriptionSystem.Persistence.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/bin/Debug/net10.0/SubscriptionSystem.Persistence.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/bin/Debug/net10.0/SubscriptionSystem.Domain.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/bin/Debug/net10.0/SubscriptionSystem.Domain.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.csproj.AssemblyReference.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.AssemblyInfoInputs.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.AssemblyInfo.cs
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.csproj.CoreCompileInputs.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/Subscrip.284DFE81.Up2Date
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/refint/SubscriptionSystem.Persistence.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/SubscriptionSystem.Persistence.genruntimeconfig.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Persistence/obj/Debug/net10.0/ref/SubscriptionSystem.Persistence.dll

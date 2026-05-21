@@ -1,0 +1,22 @@
+@model List<SubscriptionSystem.Domain.Entities.Transaction>
+@{ Layout = null; }
+
+<h2 style="color: #7048e8; text-align: center;">HARCAMA ÖZETİ</h2>
+<table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background: #f3f0ff;">
+            <th>Tarih</th>
+            <th>Açıklama</th>
+            <th>Miktar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>@item.Date.ToString("dd.MM.yyyy")</td>
+                <td>@item.Description</td>
+                <td>@item.Amount.ToString("N2") ₺</td>
+            </tr>
+        }
+    </tbody>
+</table>

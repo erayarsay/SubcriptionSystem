@@ -1,0 +1,32 @@
+@using SubscriptionSystem.Domain.Entities
+@model IEnumerable<Subscription>
+
+<div class="d-flex justify-content-between align-items-center">
+    <h2>Abonelik Listesi</h2>
+    <a asp-action="Create" class="btn btn-primary">➕ Yeni Abonelik Ekle</a>
+</div>
+
+<div class="container mt-5">
+    <h2>Abonelik Listesi</h2>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kullanıcı ID</th>
+                <th>Plan ID</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sub in Model) {
+                <tr>
+                    <td>@sub.Id</td>
+                    <td>@sub.AppUserId</td>
+                    <td>@sub.PlanId</td>
+                    <td>@(sub.IsActive ? "Aktif" : "Pasif")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

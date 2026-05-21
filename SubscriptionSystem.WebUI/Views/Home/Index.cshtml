@@ -1,0 +1,573 @@
+﻿@using SubscriptionSystem.Domain.Entities
+@model dynamic
+@{ 
+    Layout = "_Layout"; 
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+
+    <style>
+    /* Üst Bilgi Satırı */
+    .info-header-row { display: flex; gap: 30px; margin-bottom: 30px; align-items: center; }
+
+    /* Profil ve Hoşgeldin Alanı */
+    .welcome-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+        /* absolute yerine relative yaparak layout akışını koruduk, z-index'i sağlama aldık */
+        position: relative; 
+        z-index: 1001; 
+    }
+
+    .dashboard-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid #7048e8;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(112, 72, 232, 0.2);
+    }
+
+    /* --- ESKİ SEVDİĞİN ŞIK KART TASARIMI --- */
+    .subscriptions-row { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; }
+
+    .sub-card-old-style {
+        background: #f8f6ff;
+        border-radius: 40px;
+        padding: 30px;
+        min-width: 280px;
+        text-align: center;
+        color: #4b3d7a;
+        box-shadow: 0 10px 25px rgba(112, 72, 232, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(112, 72, 232, 0.1);
+        position: relative; /* Göz ikonu için şart */
+        /* Alttaki kartlar animasyonluysa (AOS vb.) z-index'i düşük tutuyoruz */
+        z-index: 1; 
+    }
+
+    /* Göz Butonu Tasarımı */
+    .btn-detail-eye {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(112, 72, 232, 0.1);
+        border: none;
+        color: #7048e8;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .btn-detail-eye:hover { background: #7048e8; color: white; transform: rotate(15deg); }
+
+    .sub-card-old-style .status-label {
+        font-weight: 800;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+
+    .sub-card-old-style .plan-name {
+        font-size: 2.2rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .sub-card-old-style .timer-box {
+        background: #7048e8;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 20px;
+        font-weight: 900;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .sub-card-old-style .expiry-date {
+        font-size: 0.85rem;
+        font-weight: 600;
+        opacity: 0.6;
+        margin-bottom: 20px;
+    }
+
+    .btn-cancel-old {
+        background: transparent;
+        border: 1.5px solid #ff4d4d;
+        color: #ff4d4d;
+        padding: 8px 20px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-cancel-old:hover { background: #ff4d4d; color: white; }
+
+    .charts-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .chart-box {
+        background: white;
+        border-radius: 30px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .notif-dropdown {
+        position: absolute; 
+        top: 60px; 
+        left: 0; 
+        width: 350px; 
+        background: #ffffff; 
+        border-radius: 20px; 
+        display: none; 
+        box-shadow: 0 15px 40px rgba(112, 72, 232, 0.2); 
+        border: 1px solid #f3f0ff;
+        overflow: hidden;
+        /* DROPDOWN'I HER ŞEYİN ÜSTÜNE ÇIKARAN KRİTİK KOMUT */
+        z-index: 99999 !important; 
+    }
+
+    .notif-header {
+        padding: 15px 20px; 
+        background: #7048e8; 
+        color: white; 
+        font-weight: 800; 
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .notif-scroll-area {
+        max-height: 380px; 
+        overflow-y: auto; 
+        padding: 10px;
+        background: #fcfaff;
+    }
+
+    .notif-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        border-left: 5px solid #7048e8;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .notif-card:hover {
+        transform: translateX(5px);
+        background: #f8f7ff;
+    }
+
+    .notif-card.read {
+        border-left-color: #d1d1d1;
+        opacity: 0.8;
+    }
+
+    .notif-card.success-type { border-left-color: #2ecc71; }
+    .notif-card.error-type { border-left-color: #ff4757; }
+
+    .notif-title {
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: #4b3d7a;
+        margin: 0;
+    }
+
+    .notif-msg {
+        font-size: 0.8rem;
+        color: #636e72;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .notif-date {
+        font-size: 0.7rem;
+        color: #a19bbd;
+        text-align: right;
+        margin-top: 5px;
+    }
+
+    .notif-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+    .notif-badge {
+        position: absolute !important;
+        top: -8px !important;    /* Yukarıdan tam hizala */
+        right: -8px !important;  /* Sağdan tam hizala */
+        background: #ff4757;
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 7px;
+        border-radius: 10px;
+        border: 2px solid white;
+        font-weight: bold;
+        z-index: 10;
+        pointer-events: none; /* Sayıya tıklanmasın, zile tıklansın */
+    }
+
+    /* Tümünü Oku Buton Stili */
+    .btn-read-all {
+        font-size: 0.75rem;
+        color: #7048e8;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 4px 8px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+    .btn-read-all:hover { background: rgba(112, 72, 232, 0.1); }
+</style>
+}
+
+<div class="dashboard-wrapper">
+    @* Profil Resimli Karşılama *@
+    <div class="welcome-container" data-aos="fade-right">
+    <img src="@(ViewBag.UserProfilePicture != null ? Url.Content($"~/img/profile/{ViewBag.UserProfilePicture}") : Url.Content("~/img/default-user.png"))" 
+     class="dashboard-avatar" 
+     alt="profil" />
+        <div class="welcome-text">
+            <h1 style="margin: 0;">Hoşgeldin, @ViewBag.UserFullName!</h1>
+            
+<div class="notif-wrapper" id="notifBtn" style="position: relative;">
+    <div class="bell-icon" id="notifIcon" style="font-size: 1.3rem; color: #7048e8; background: #f3f0ff; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 12px; transition: 0.3s; cursor: pointer;">
+        <i class="fas fa-bell"></i>
+        @if (ViewBag.Notifications != null && ((List<Notification>)ViewBag.Notifications).Any(n => !n.IsRead))
+        {
+            <span class="notif-badge" style="position: absolute; top: -5px; right: -5px; background: #ff4757; color: white; font-size: 0.65rem; padding: 2px 6px; border-radius: 50%; border: 2px solid white;">
+                @(((List<Notification>)ViewBag.Notifications).Count(n => !n.IsRead))
+            </span>
+        }
+    </div>
+
+    @* Dropdown Menüsü *@
+    <div class="notif-dropdown shadow" id="notifDropdown">
+        <div class="notif-header">
+    <span><i class="fas fa-bell me-2"></i> Bildirimler</span>
+    @if (ViewBag.Notifications != null && ((List<Notification>)ViewBag.Notifications).Any(n => !n.IsRead))
+    {
+        <a href="javascript:void(0)" onclick="markAllAsRead()" class="btn-read-all" style="color: white; background: rgba(255,255,255,0.2);">
+            <i class="fas fa-check-double"></i> Tümünü Oku
+        </a>
+    }
+</div>
+        <div class="notif-scroll-area">
+            @if (ViewBag.Notifications != null && ((List<Notification>)ViewBag.Notifications).Any())
+            {
+                foreach (var notif in (List<Notification>)ViewBag.Notifications)
+                {
+                    @* Akıllı Renk Mantığı: Tipine göre border rengi değişir *@
+                    <div class="notif-card @(notif.IsRead ? "read" : "") @(notif.Type + "-type")" onclick="markAsRead(@notif.Id)">
+                        <p class="notif-title">@notif.Title</p>
+                        <p class="notif-msg">@notif.Message</p>
+                        <span class="notif-date">@notif.CreatedAt.ToString("dd MMM HH:mm")</span>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="p-5 text-center">
+                    <i class="fas fa-ghost d-block mb-2" style="font-size: 2rem; color: #d1d1d1;"></i>
+                    <p class="text-muted small">Henüz bildirim yok.</p>
+                </div>
+            }
+        </div>
+        
+        @* ARŞİV KAPISI: Tümünü Gör butonu *@
+        <div class="notif-footer" style="padding: 10px; text-align: center; background: #f8f7ff; border-top: 1px solid #f3f0ff;">
+            <a asp-action="AllNotifications" style="color: #7048e8; font-size: 0.8rem; font-weight: 700; text-decoration: none;">
+                Tümünü Gör <i class="fas fa-external-link-alt ms-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    @* Üst İstatistikler *@
+    <div class="info-header-row">
+        @if (ViewBag.IsAdmin ?? false) {
+            <div class="stat-card" style="min-width: 200px;">
+                <div class="stat-icon" style="background: #e0e7ff; color: #6366f1;">👤</div>
+                <div class="stat-details"><h3>@ViewBag.TotalUsers</h3><span>Toplam Kullanıcı</span></div>
+            </div>
+        }
+        <div class="stat-card" style="min-width: 200px;">
+            <div class="stat-icon" style="background: #fef3c7; color: #f59e0b;">💰</div>
+            <div class="stat-details"><h3>@(ViewBag.UserBalance?.ToString("N0") ?? "0") ₺</h3><span>Cüzdan Bakiyesi</span></div>
+        </div>
+    </div>
+
+    @* ABONELİK KARTLARI *@
+   <div class="subscriptions-row">
+    @if (ViewBag.ActiveSubs != null) 
+    {
+        foreach (var sub in (List<Subscription>)ViewBag.ActiveSubs) 
+        {
+            var days = (sub.EndDate - DateTime.UtcNow).Days;
+            if (days < 0) days = 0;
+
+            <div class="sub-card-old-style" data-aos="zoom-in">
+                @* GÖZ İKONU *@
+                <button type="button" class="btn-detail-eye" title="Detaylar" onclick="showSubDetail(@sub.Id)">
+                    <i class="fas fa-eye"></i>
+                </button>
+
+                @* Dondurulma Durumuna Göre Etiket *@
+                <div class="status-label">@(sub.IsFrozen ? "DONDURULMUŞ ABONELİK" : "AKTİF ABONELİK")</div>
+                
+                <div class="plan-name">@sub.Plan.Title</div>
+                
+                <div class="timer-box" style="background: @(sub.IsFrozen ? "#636e72" : "#7048e8");">
+                    @(sub.IsFrozen ? "DONDURULDU" : days + " GÜN KALDI")
+                </div>
+                
+                <div class="expiry-date">Bitiş: @sub.EndDate.ToString("dd.MM.yyyy")</div>
+                
+                @* --- BUTONLARIN İKİYE BÖLÜNDÜĞÜ ALAN --- *@
+                <div style="display: flex; gap: 10px; width: 100%; margin-top: auto;">
+                    @if (!sub.IsFrozen)
+                    {
+                        <form asp-action="FreezeSubscription" method="post" style="flex: 1;">
+                            <input type="hidden" name="subId" value="@sub.Id" />
+                            <button type="submit" class="btn-cancel-old" style="width: 100%; border-color: #7048e8; color: #7048e8;">
+                                <i class="fas fa-snowflake"></i> Dondur
+                            </button>
+                        </form>
+
+                        <form asp-action="CancelSubscription" method="post" id="cancelForm-@sub.Id" style="flex: 1;">
+                            <input type="hidden" name="subId" value="@sub.Id" />
+                            <button type="button" class="btn-cancel-old" onclick="confirmCancel(@sub.Id)" style="width: 100%;">
+                                <i class="fas fa-times"></i> İptal
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-action="UnfreezeSubscription" method="post" style="width: 100%;">
+                            <input type="hidden" name="subId" value="@sub.Id" />
+                            <button type="submit" class="btn-cancel-old" style="width: 100%; background: #7048e8; color: white; border: none; padding: 12px;">
+                                <i class="fas fa-fire"></i> Devam Ettir
+                            </button>
+                        </form>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
+
+    @* GRAFİKLER *@
+    <div class="charts-wrapper">
+        @if (ViewBag.IsAdmin ?? false) {
+            <div class="chart-box" data-aos="fade-up">
+                <h3><i class="fas fa-chart-line" style="color: #7048e8;"></i> Mağaza Gelir Analizi</h3>
+                <div style="height: 300px;"><canvas id="adminRevenueChart"></canvas></div>
+            </div>
+        }
+
+        <div class="chart-box" data-aos="fade-up">
+            <h3><i class="fas fa-wallet" style="color: #ff4d4d;"></i> Kişisel Harcama Analizim</h3>
+            <div style="height: 300px;"><canvas id="userSpendingChart"></canvas></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Admin Gelir Grafiği
+            @if (ViewBag.IsAdmin ?? false) {
+                <text>
+                const adminCtx = document.getElementById('adminRevenueChart');
+                new Chart(adminCtx, {
+                    type: 'line',
+                    data: {
+                        labels: @Html.Raw(Json.Serialize(ViewBag.WeeklyDays)),
+                        datasets: [{
+                            label: 'Mağaza Geliri (₺)',
+                            data: @Html.Raw(Json.Serialize(ViewBag.WeeklyEarnings)),
+                            borderColor: '#7048e8',
+                            backgroundColor: 'rgba(112, 72, 232, 0.1)',
+                            fill: true, tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                });
+                </text>
+            }
+
+            // Kullanıcı Harcama Grafiği
+            const userCtx = document.getElementById('userSpendingChart');
+            new Chart(userCtx, {
+                type: 'line',
+                data: {
+                    labels: @Html.Raw(Json.Serialize(ViewBag.UserDays)),
+                    datasets: [{
+                        label: 'Harcamam (₺)',
+                        data: @Html.Raw(Json.Serialize(ViewBag.UserSpendings)),
+                        borderColor: '#ff4d4d',
+                        backgroundColor: 'rgba(255, 77, 77, 0.1)',
+                        fill: true, tension: 0.4
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        });
+
+        // Detay Gözü Fonksiyonu
+        function showSubDetail(subId) {
+    Swal.fire({
+        title: 'Veriler Getiriliyor...',
+        allowOutsideClick: false,
+        didOpen: () => { Swal.showLoading(); }
+    });
+
+    fetch(`/Home/GetSubscriptionDetail?subId=${subId}`)
+        .then(response => response.json())
+        .then(data => {
+            Swal.fire({
+                title: '',
+                html: `
+                    <div style="text-align: left; font-family: sans-serif;">
+                        <!-- ANA BAŞLIK: TAM LİLA VE KALIN -->
+                        <div style="text-align: center; margin-bottom: 25px;">
+                            <i class="fas fa-shield-alt" style="color: #7048e8; font-size: 2rem; margin-bottom: 10px;"></i>
+                            <h2 style="color: #7048e8 !important; font-weight: 900; margin: 0; font-size: 1.8rem;">${data.planTitle} Detayları</h2>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            
+                            <!-- BAŞLANGIÇ KUTUSU -->
+                            <div style="border: 2px solid #f3f0ff; border-radius: 15px; padding: 15px; background: #fff;">
+                                <label style="display: block; color: #7048e8 !important; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px;">
+                                    <i class="fas fa-calendar-plus"></i> Başlangıç
+                                </label>
+                                <div style="height: 1px; background: #f3f0ff; width: 100%; margin-bottom: 10px;"></div>
+                                <div style="color: #2d3436; font-weight: 700; font-size: 1.1rem;">${data.startDate}</div>
+                            </div>
+
+                            <!-- BİTİŞ KUTUSU -->
+                            <div style="border: 2px solid #f3f0ff; border-radius: 15px; padding: 15px; background: #fff;">
+                                <label style="display: block; color: #7048e8 !important; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px;">
+                                    <i class="fas fa-calendar-check"></i> Bitiş
+                                </label>
+                                <div style="height: 1px; background: #f3f0ff; width: 100%; margin-bottom: 10px;"></div>
+                                <div style="color: #2d3436; font-weight: 700; font-size: 1.1rem;">${data.endDate}</div>
+                            </div>
+
+                            <!-- TUTAR KUTUSU -->
+                            <div style="border: 2px solid #f3f0ff; border-radius: 15px; padding: 15px; background: #fff;">
+                                <label style="display: block; color: #7048e8 !important; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px;">
+                                    <i class="fas fa-tag"></i> Ödenen Tutar
+                                </label>
+                                <div style="height: 1px; background: #f3f0ff; width: 100%; margin-bottom: 10px;"></div>
+                                <div style="color: #2d3436; font-weight: 700; font-size: 1.1rem;">${data.amount} ₺</div>
+                            </div>
+
+                            <!-- KALAN SÜRE KUTUSU (ÖZEL VURGULU) -->
+                            <div style="border: 2px solid #7048e8; border-radius: 15px; padding: 15px; background: #f8f6ff;">
+                                <label style="display: block; color: #7048e8 !important; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px;">
+                                    <i class="fas fa-hourglass-half"></i> Kalan Süre
+                                </label>
+                                <div style="height: 1px; background: rgba(112, 72, 232, 0.3); width: 100%; margin-bottom: 10px;"></div>
+                                <div style="color: #7048e8 !important; font-weight: 900; font-size: 1.2rem;">${data.remainingTime}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                `,
+                confirmButtonText: 'Tamam',
+                confirmButtonColor: '#7048e8',
+                customClass: {
+                    popup: 'lila-final-popup'
+                }
+            });
+        });
+}
+
+        function confirmCancel(subId) {
+            Swal.fire({
+                title: 'Emin misin?',
+                text: "Paketi iptal edersen kalan günlerin yanar!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#ff4d4d',
+                cancelButtonColor: '#7048e8',
+                confirmButtonText: 'Evet, İptal Et',
+                cancelButtonText: 'Vazgeç'
+            }).then((result) => {
+                if (result.isConfirmed) document.getElementById('cancelForm-' + subId).submit();
+            });
+        }
+        // --- ÇAN DROPDOWN MANTIĞI ---
+        const idxNotifIcon = document.getElementById('notifIcon'); // Sadece ikonu seçtik
+        const idxNotifDropdown = document.getElementById('notifDropdown');
+
+        if (idxNotifIcon && idxNotifDropdown) {
+            idxNotifIcon.addEventListener('click', function (e) {
+                e.stopPropagation(); // Tıklamanın dışarı taşmasını engelle
+                const isActive = idxNotifDropdown.style.display === 'block';
+                idxNotifDropdown.style.display = isActive ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function (e) {
+                // Eğer tıklanan yer ikon değilse ve dropdown'ın kendisi değilse kapat
+                if (!idxNotifIcon.contains(e.target) && !idxNotifDropdown.contains(e.target)) {
+                    idxNotifDropdown.style.display = 'none';
+                }
+            });
+        }
+
+        // --- OKUNDU İŞARETLEME (Bu en dışta durabilir) ---
+        function markAllAsRead(id) {
+            fetch(`/Home/MarkNotificationAsRead?id=${id}`, {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) location.reload();
+            });
+        }
+
+        // --- TÜMÜNÜ OKUNDU İŞARETLEME ---
+        function markAllAsRead() {
+            fetch('/Home/MarkAllNotificationsAsRead', {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    location.reload(); // Her şeyi temizle ve dükkanı tazele usta
+                } else {
+                    console.error("Tümünü oku işlemi başarısız!");
+                }
+            }).catch(err => console.error("Hata:", err));
+        }
+    </script>
+}

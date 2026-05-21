@@ -1,0 +1,1693 @@
+2026-05-18 08:51:55.329 +03:00 [INF] User profile is available. Using '/Users/eraymac/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-18 08:51:55.731 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 08:51:55.771 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 08:51:55.793 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-18 08:51:55.818 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:51:55.830 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:51:55.857 +03:00 [INF] Now listening on: http://localhost:5246
+2026-05-18 08:51:55.858 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-18 08:51:55.858 +03:00 [INF] Hosting environment: Development
+2026-05-18 08:51:55.858 +03:00 [INF] Content root path: /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI
+2026-05-18 08:51:56.027 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/ - null null
+2026-05-18 08:51:56.030 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-18 08:51:56.041 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 08:51:56.046 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-18 08:51:56.054 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-18 08:51:56.081 +03:00 [INF] Executed ViewResult - view Login executed in 25.9775ms.
+2026-05-18 08:51:56.082 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 35.7098ms
+2026-05-18 08:51:56.082 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 08:51:56.086 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/ - 200 null text/html; charset=utf-8 58.6589ms
+2026-05-18 08:51:56.088 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:51:56.088 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/LogReg.css - null null
+2026-05-18 08:51:56.090 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 1.4649ms
+2026-05-18 08:51:56.091 +03:00 [INF] The file /css/LogReg.css was not modified
+2026-05-18 08:51:56.092 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/LogReg.css - 304 null text/css 3.2827ms
+2026-05-18 08:52:01.981 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 228
+2026-05-18 08:52:01.984 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:01.993 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:02.036 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-18 08:52:02.040 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-18 08:52:02.095 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2026-05-18 08:52:02.102 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-05-18 08:52:02.103 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 08:52:02.106 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2026-05-18 08:52:02.108 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-05-18 08:52:02.109 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Index.
+2026-05-18 08:52:02.109 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 115.8886ms
+2026-05-18 08:52:02.109 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:02.110 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 129.2041ms
+2026-05-18 08:52:02.115 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:02.119 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:02.121 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:02.133 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:02.143 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:02.144 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:02.158 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:02.181 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:02.191 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:02.201 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:02.204 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:02.205 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:02.221 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:02.236 +03:00 [INF] Executed ViewResult - view Index executed in 30.8293ms.
+2026-05-18 08:52:02.236 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 115.4336ms
+2026-05-18 08:52:02.236 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:02.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 120.9944ms
+2026-05-18 08:52:02.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/layout.css - null null
+2026-05-18 08:52:02.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/main.css - null null
+2026-05-18 08:52:02.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/dashboard.css - null null
+2026-05-18 08:52:02.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/img/profiles/ed31b770-d3c7-4dd7-bba9-944732bcc65c.png - null null
+2026-05-18 08:52:02.266 +03:00 [INF] The file /css/main.css was not modified
+2026-05-18 08:52:02.266 +03:00 [INF] The file /css/dashboard.css was not modified
+2026-05-18 08:52:02.266 +03:00 [INF] The file /css/layout.css was not modified
+2026-05-18 08:52:02.266 +03:00 [INF] The file /img/profiles/ed31b770-d3c7-4dd7-bba9-944732bcc65c.png was not modified
+2026-05-18 08:52:02.266 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/main.css - 304 null text/css 0.7489ms
+2026-05-18 08:52:02.266 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/dashboard.css - 304 null text/css 0.4248ms
+2026-05-18 08:52:02.266 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/img/profiles/ed31b770-d3c7-4dd7-bba9-944732bcc65c.png - 304 null image/png 0.4808ms
+2026-05-18 08:52:02.266 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/layout.css - 304 null text/css 0.7458ms
+2026-05-18 08:52:02.266 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:02.267 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.3107ms
+2026-05-18 08:52:11.834 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-18 08:52:11.845 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:11.853 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:11.859 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:11.867 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-18 08:52:11.870 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-18 08:52:11.880 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:11.881 +03:00 [INF] Executed ViewResult - view Wallet executed in 11.7096ms.
+2026-05-18 08:52:11.881 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 28.5481ms
+2026-05-18 08:52:11.881 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:11.882 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 47.4976ms
+2026-05-18 08:52:11.897 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:11.897 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.3312ms
+2026-05-18 08:52:11.897 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/wallet.css - null null
+2026-05-18 08:52:11.898 +03:00 [INF] The file /css/wallet.css was not modified
+2026-05-18 08:52:11.898 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/wallet.css - 304 null text/css 0.4765ms
+2026-05-18 08:52:12.948 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:12.954 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:12.954 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:12.957 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:12.957 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:12.958 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:12.958 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:12.959 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:12.960 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:12.960 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:12.960 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:12.960 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:12.961 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:12.962 +03:00 [INF] Executed ViewResult - view Index executed in 1.2901ms.
+2026-05-18 08:52:12.962 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 8.0746ms
+2026-05-18 08:52:12.962 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:12.962 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 13.8165ms
+2026-05-18 08:52:12.978 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:12.978 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.191ms
+2026-05-18 08:52:15.837 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/CancelSubscription - application/x-www-form-urlencoded 234
+2026-05-18 08:52:15.838 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.CancelSubscription (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:15.846 +03:00 [INF] Route matched with {action = "CancelSubscription", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelSubscription(Int32) on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:15.852 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:15.866 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__subscriptionId_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."Id" = @__subscriptionId_0 AND s."AppUserId" = @__userId_1 AND s."IsActive"
+LIMIT 1
+2026-05-18 08:52:15.873 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-18 08:52:15.922 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p17='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p18='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = Boolean), @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?' (DbType = Decimal), @p30='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTime), @p22='?' (DbType = DateTime), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = DateTime), @p29='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "FullName" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "NormalizedEmail" = @p7, "NormalizedUserName" = @p8, "PasswordHash" = @p9, "PhoneNumber" = @p10, "PhoneNumberConfirmed" = @p11, "ProfilePicture" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15, "WalletBalance" = @p16
+WHERE "Id" = @p17 AND "ConcurrencyStamp" = @p18;
+UPDATE "Subscriptions" SET "AppUserId" = @p19, "AutoRenew" = @p20, "CreateDate" = @p21, "EndDate" = @p22, "IsActive" = @p23, "IsDeleted" = @p24, "IsFrozen" = @p25, "PlanId" = @p26, "RemainingFreezeCount" = @p27, "StartDate" = @p28, "UpdatedDate" = @p29
+WHERE "Id" = @p30;
+2026-05-18 08:52:15.939 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Transactions" ("Amount", "AppUserId", "Date", "Description", "IsExpense")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-05-18 08:52:15.946 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Notifications" ("AppUserId", "CreatedAt", "IsRead", "Message", "Title", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2026-05-18 08:52:15.946 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Index.
+2026-05-18 08:52:15.947 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.CancelSubscription (SubscriptionSystem.WebUI) in 100.7887ms
+2026-05-18 08:52:15.947 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.CancelSubscription (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:15.947 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/CancelSubscription - 302 null null 109.9123ms
+2026-05-18 08:52:15.952 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:15.953 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:15.953 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:15.953 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:15.954 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:15.954 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:15.954 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:15.955 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:15.955 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:15.955 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:15.955 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:15.956 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:15.956 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:15.957 +03:00 [INF] Executed ViewResult - view Index executed in 1.3277ms.
+2026-05-18 08:52:15.957 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 4.0811ms
+2026-05-18 08:52:15.957 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:15.957 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 4.4897ms
+2026-05-18 08:52:15.979 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:15.979 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1628ms
+2026-05-18 08:52:18.687 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-18 08:52:18.689 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:18.689 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:18.692 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:18.694 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-18 08:52:18.694 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-18 08:52:18.698 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:18.699 +03:00 [INF] Executed ViewResult - view Wallet executed in 5.1064ms.
+2026-05-18 08:52:18.700 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 9.9527ms
+2026-05-18 08:52:18.700 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:18.700 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 12.5009ms
+2026-05-18 08:52:18.718 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:18.718 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1271ms
+2026-05-18 08:52:21.388 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:21.390 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:21.390 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:21.393 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:21.394 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:21.395 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:21.396 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:21.397 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:21.398 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:21.399 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:21.400 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:21.400 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:21.403 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:21.404 +03:00 [INF] Executed ViewResult - view Index executed in 4.0676ms.
+2026-05-18 08:52:21.404 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 13.8665ms
+2026-05-18 08:52:21.405 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:21.405 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 16.4827ms
+2026-05-18 08:52:21.422 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:21.422 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.131ms
+2026-05-18 08:52:24.023 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/MarkAllNotificationsAsRead - null 0
+2026-05-18 08:52:24.025 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.MarkAllNotificationsAsRead (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:24.032 +03:00 [INF] Route matched with {action = "MarkAllNotificationsAsRead", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAllNotificationsAsRead() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:24.036 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:24.043 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+2026-05-18 08:52:24.046 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Notifications" SET "IsRead" = @p0
+WHERE "Id" = @p1;
+2026-05-18 08:52:24.049 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2026-05-18 08:52:24.049 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.MarkAllNotificationsAsRead (SubscriptionSystem.WebUI) in 17.2152ms
+2026-05-18 08:52:24.049 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.MarkAllNotificationsAsRead (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:24.050 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/MarkAllNotificationsAsRead - 200 0 null 26.6539ms
+2026-05-18 08:52:24.069 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:24.070 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:24.071 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:24.072 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:24.073 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:24.074 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:24.075 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:24.076 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:24.077 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:24.078 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:24.078 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:24.078 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:24.079 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:24.080 +03:00 [INF] Executed ViewResult - view Index executed in 1.8548ms.
+2026-05-18 08:52:24.080 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 9.6034ms
+2026-05-18 08:52:24.080 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:24.080 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 11.3857ms
+2026-05-18 08:52:24.098 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:24.099 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1245ms
+2026-05-18 08:52:24.113 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/favicon.ico - null null
+2026-05-18 08:52:24.114 +03:00 [INF] The file /favicon.ico was not modified
+2026-05-18 08:52:24.114 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/favicon.ico - 304 null image/x-icon 0.2644ms
+2026-05-18 08:52:28.322 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Packages - null null
+2026-05-18 08:52:28.323 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Packages (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:28.329 +03:00 [INF] Route matched with {action = "Packages", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Packages() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:28.333 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:28.344 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Plans" AS p
+WHERE NOT (p."IsDeleted")
+ORDER BY p."OrderIndex", p."CreateDate" DESC
+2026-05-18 08:52:28.351 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."PlanId"
+FROM "Subscriptions" AS s
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:28.353 +03:00 [INF] Executing ViewResult, running view Packages.
+2026-05-18 08:52:28.362 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:28.363 +03:00 [INF] Executed ViewResult - view Packages executed in 9.8545ms.
+2026-05-18 08:52:28.363 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Packages (SubscriptionSystem.WebUI) in 33.4671ms
+2026-05-18 08:52:28.363 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Packages (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:28.363 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Packages - 200 null text/html; charset=utf-8 41.2188ms
+2026-05-18 08:52:28.382 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:28.382 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1203ms
+2026-05-18 08:52:28.383 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/packages.css - null null
+2026-05-18 08:52:28.383 +03:00 [INF] The file /css/packages.css was not modified
+2026-05-18 08:52:28.383 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/packages.css - 304 null text/css 0.3226ms
+2026-05-18 08:52:31.249 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/Subscribe - application/x-www-form-urlencoded 234
+2026-05-18 08:52:31.251 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Subscribe (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:31.258 +03:00 [INF] Route matched with {action = "Subscribe", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Subscribe(Int32) on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:31.262 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:31.272 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Plans" AS p
+WHERE p."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:31.278 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__planId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate"
+FROM "Subscriptions" AS s
+WHERE s."AppUserId" = @__userId_0 AND s."PlanId" = @__planId_1 AND (s."IsActive" OR s."IsFrozen")
+LIMIT 1
+2026-05-18 08:52:31.281 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-18 08:52:31.284 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p17='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p18='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = Boolean), @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?' (DbType = Decimal), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTime), @p22='?' (DbType = DateTime), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = DateTime), @p29='?' (DbType = DateTime), @p30='?' (DbType = Decimal), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime), @p33='?', @p34='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "FullName" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "NormalizedEmail" = @p7, "NormalizedUserName" = @p8, "PasswordHash" = @p9, "PhoneNumber" = @p10, "PhoneNumberConfirmed" = @p11, "ProfilePicture" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15, "WalletBalance" = @p16
+WHERE "Id" = @p17 AND "ConcurrencyStamp" = @p18;
+INSERT INTO "Subscriptions" ("AppUserId", "AutoRenew", "CreateDate", "EndDate", "IsActive", "IsDeleted", "IsFrozen", "PlanId", "RemainingFreezeCount", "StartDate", "UpdatedDate")
+VALUES (@p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29)
+RETURNING "Id";
+INSERT INTO "Transactions" ("Amount", "AppUserId", "Date", "Description", "IsExpense")
+VALUES (@p30, @p31, @p32, @p33, @p34)
+RETURNING "Id";
+2026-05-18 08:52:31.287 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Notifications" ("AppUserId", "CreatedAt", "IsRead", "Message", "Title", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2026-05-18 08:52:31.287 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Index.
+2026-05-18 08:52:31.287 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Subscribe (SubscriptionSystem.WebUI) in 29.1294ms
+2026-05-18 08:52:31.287 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Subscribe (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:31.287 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/Subscribe - 302 null null 38.7223ms
+2026-05-18 08:52:31.294 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:31.295 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:31.295 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:31.296 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:31.296 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:31.297 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:31.298 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:31.298 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:31.299 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:31.299 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:31.299 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:31.300 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:31.301 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:31.301 +03:00 [INF] Executed ViewResult - view Index executed in 1.7225ms.
+2026-05-18 08:52:31.301 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 6.679ms
+2026-05-18 08:52:31.301 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:31.301 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 7.4485ms
+2026-05-18 08:52:31.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:31.321 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1055ms
+2026-05-18 08:52:36.160 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/MarkAllNotificationsAsRead - null 0
+2026-05-18 08:52:36.162 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.MarkAllNotificationsAsRead (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:36.162 +03:00 [INF] Route matched with {action = "MarkAllNotificationsAsRead", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAllNotificationsAsRead() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:36.165 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:36.166 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+2026-05-18 08:52:36.168 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Notifications" SET "IsRead" = @p0
+WHERE "Id" = @p1;
+2026-05-18 08:52:36.169 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2026-05-18 08:52:36.169 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.MarkAllNotificationsAsRead (SubscriptionSystem.WebUI) in 6.4696ms
+2026-05-18 08:52:36.169 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.MarkAllNotificationsAsRead (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:36.169 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/MarkAllNotificationsAsRead - 200 0 null 9.571ms
+2026-05-18 08:52:36.187 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:52:36.188 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:36.189 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:52:36.191 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:52:36.191 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:52:36.192 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:52:36.193 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:52:36.194 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:52:36.195 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:36.195 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:52:36.196 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:52:36.196 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:52:36.198 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:52:36.199 +03:00 [INF] Executed ViewResult - view Index executed in 2.5293ms.
+2026-05-18 08:52:36.199 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 10.181ms
+2026-05-18 08:52:36.199 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:52:36.199 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 11.9411ms
+2026-05-18 08:52:36.217 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:52:36.217 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1284ms
+2026-05-18 08:59:17.617 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:59:17.617 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:59:17.619 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:59:17.628 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:59:17.629 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:59:17.630 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:59:17.631 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:59:17.632 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:59:17.632 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:59:17.632 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:59:17.633 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:59:17.633 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:59:17.638 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:59:17.638 +03:00 [INF] Executed ViewResult - view Index executed in 5.69ms.
+2026-05-18 08:59:17.638 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 18.9705ms
+2026-05-18 08:59:17.638 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:59:17.639 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 21.7002ms
+2026-05-18 08:59:17.650 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:59:17.650 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1117ms
+2026-05-18 08:59:43.125 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 08:59:43.125 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:59:43.127 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 08:59:43.128 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 08:59:43.128 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 08:59:43.129 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 08:59:43.129 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 08:59:43.129 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 08:59:43.130 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:59:43.130 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 08:59:43.130 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 08:59:43.131 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 08:59:43.135 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 08:59:43.136 +03:00 [INF] Executed ViewResult - view Index executed in 5.6065ms.
+2026-05-18 08:59:43.136 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 8.565ms
+2026-05-18 08:59:43.136 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 08:59:43.136 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 11.1237ms
+2026-05-18 08:59:43.150 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 08:59:43.150 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0784ms
+2026-05-18 09:00:03.542 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:00:03.542 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:00:03.544 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:00:03.545 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:00:03.545 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:00:03.546 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:00:03.546 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:00:03.546 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:00:03.547 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:00:03.547 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:00:03.547 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:00:03.547 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:00:03.552 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:00:03.552 +03:00 [INF] Executed ViewResult - view Index executed in 5.0392ms.
+2026-05-18 09:00:03.552 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 7.8675ms
+2026-05-18 09:00:03.552 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:00:03.552 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 10.565ms
+2026-05-18 09:00:03.565 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:00:03.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0832ms
+2026-05-18 09:00:35.305 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:00:35.305 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:00:35.308 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:00:35.308 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:00:35.309 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:00:35.309 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:00:35.310 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:00:35.310 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:00:35.310 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:00:35.310 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:00:35.311 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:00:35.311 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:00:35.316 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:00:35.317 +03:00 [INF] Executed ViewResult - view Index executed in 6.4079ms.
+2026-05-18 09:00:35.317 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 9.3049ms
+2026-05-18 09:00:35.317 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:00:35.317 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 12.611ms
+2026-05-18 09:00:35.334 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:00:35.334 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1637ms
+2026-05-18 09:00:50.730 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:00:50.730 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:00:50.733 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:00:50.733 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:00:50.734 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:00:50.734 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:00:50.734 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:00:50.735 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:00:50.735 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:00:50.735 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:00:50.735 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:00:50.736 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:00:50.741 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:00:50.741 +03:00 [INF] Executed ViewResult - view Index executed in 5.8715ms.
+2026-05-18 09:00:50.741 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 8.8769ms
+2026-05-18 09:00:50.741 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:00:50.741 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 11.8484ms
+2026-05-18 09:00:50.754 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:00:50.754 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1131ms
+2026-05-18 09:01:57.449 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:01:57.450 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:01:57.453 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:01:57.453 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:01:57.454 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:01:57.454 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:01:57.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:01:57.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:01:57.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:01:57.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:01:57.456 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:01:57.456 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:01:57.461 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:01:57.462 +03:00 [INF] Executed ViewResult - view Index executed in 6.0051ms.
+2026-05-18 09:01:57.462 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 9.0612ms
+2026-05-18 09:01:57.462 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:01:57.462 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 12.4699ms
+2026-05-18 09:01:57.476 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:01:57.477 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.271ms
+2026-05-18 09:02:35.599 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:02:35.599 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:02:35.603 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:02:35.604 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:02:35.605 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:02:35.605 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:02:35.605 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:02:35.606 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:02:35.606 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:02:35.606 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:02:35.607 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:02:35.607 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:02:35.614 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:02:35.614 +03:00 [INF] Executed ViewResult - view Index executed in 7.5287ms.
+2026-05-18 09:02:35.614 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 11.0895ms
+2026-05-18 09:02:35.614 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:02:35.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 15.4935ms
+2026-05-18 09:02:35.623 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:02:35.623 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0872ms
+2026-05-18 09:02:36.672 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:02:36.673 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:02:36.675 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:02:36.676 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:02:36.677 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:02:36.677 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:02:36.677 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:02:36.677 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:02:36.678 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:02:36.678 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:02:36.678 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:02:36.678 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:02:36.683 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:02:36.683 +03:00 [INF] Executed ViewResult - view Index executed in 5.0137ms.
+2026-05-18 09:02:36.683 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 7.8142ms
+2026-05-18 09:02:36.683 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:02:36.683 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 10.9724ms
+2026-05-18 09:02:36.702 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:02:36.702 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.2181ms
+2026-05-18 09:05:21.044 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:05:21.045 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:05:21.048 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:05:21.056 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:05:21.058 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:05:21.059 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:05:21.060 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:05:21.060 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:05:21.061 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:05:21.061 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:05:21.061 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:05:21.062 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:05:21.067 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:05:21.067 +03:00 [INF] Executed ViewResult - view Index executed in 5.8656ms.
+2026-05-18 09:05:21.067 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 19.6732ms
+2026-05-18 09:05:21.067 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:05:21.067 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 22.9258ms
+2026-05-18 09:05:21.075 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:05:21.075 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0806ms
+2026-05-18 09:05:29.531 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 09:05:29.531 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:05:29.534 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 09:05:29.534 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 09:05:29.535 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 09:05:29.535 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 09:05:29.535 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 09:05:29.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 09:05:29.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:05:29.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 09:05:29.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 09:05:29.537 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 09:05:29.541 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 09:05:29.542 +03:00 [INF] Executed ViewResult - view Index executed in 5.5068ms.
+2026-05-18 09:05:29.542 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 8.2601ms
+2026-05-18 09:05:29.542 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 09:05:29.542 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 10.9322ms
+2026-05-18 09:05:29.553 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 09:05:29.553 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0995ms
+2026-05-18 13:57:36.630 +03:00 [INF] User profile is available. Using '/Users/eraymac/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-18 13:57:37.025 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 13:57:37.049 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 13:57:37.080 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-18 13:57:37.098 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 13:57:37.108 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 13:57:37.133 +03:00 [INF] Now listening on: http://localhost:5246
+2026-05-18 13:57:37.134 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-18 13:57:37.134 +03:00 [INF] Hosting environment: Development
+2026-05-18 13:57:37.134 +03:00 [INF] Content root path: /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI
+2026-05-18 13:57:37.276 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/ - null null
+2026-05-18 13:57:37.279 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-18 13:57:37.313 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:57:37.332 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2026-05-18 13:57:37.342 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-05-18 13:57:37.343 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 13:57:37.346 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2026-05-18 13:57:37.349 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:37.353 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:37.357 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-18 13:57:37.379 +03:00 [INF] Executed ViewResult - view Login executed in 22.0802ms.
+2026-05-18 13:57:37.379 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 26.3183ms
+2026-05-18 13:57:37.379 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:37.382 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/ - 200 null text/html; charset=utf-8 106.1681ms
+2026-05-18 13:57:37.393 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:57:37.394 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 1.021ms
+2026-05-18 13:57:42.805 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 271
+2026-05-18 13:57:42.814 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:42.823 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:42.843 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-18 13:57:42.849 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-18 13:57:42.894 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2026-05-18 13:57:42.894 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-05-18 13:57:42.895 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 13:57:42.895 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2026-05-18 13:57:42.896 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-05-18 13:57:42.897 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Index.
+2026-05-18 13:57:42.898 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 74.1506ms
+2026-05-18 13:57:42.898 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:42.898 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 92.8182ms
+2026-05-18 13:57:42.902 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 13:57:42.908 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:42.910 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:42.917 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:57:42.929 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 13:57:42.929 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 13:57:42.943 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 13:57:42.966 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 13:57:42.976 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:42.986 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 13:57:42.989 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 13:57:42.990 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 13:57:43.006 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:43.021 +03:00 [INF] Executed ViewResult - view Index executed in 30.5657ms.
+2026-05-18 13:57:43.021 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 110.4277ms
+2026-05-18 13:57:43.021 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:43.021 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 118.8305ms
+2026-05-18 13:57:43.051 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:57:43.052 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.7168ms
+2026-05-18 13:57:44.997 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-18 13:57:45.007 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:45.015 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:45.021 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:57:45.029 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-18 13:57:45.032 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-18 13:57:45.042 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:45.043 +03:00 [INF] Executed ViewResult - view Wallet executed in 11.3731ms.
+2026-05-18 13:57:45.044 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 28.5635ms
+2026-05-18 13:57:45.044 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:45.044 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 46.3442ms
+2026-05-18 13:57:45.070 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:57:45.070 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.7187ms
+2026-05-18 13:57:46.581 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 13:57:46.585 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:46.585 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:46.589 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:57:46.591 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 13:57:46.591 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 13:57:46.593 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 13:57:46.593 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 13:57:46.594 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:46.594 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 13:57:46.595 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 13:57:46.595 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 13:57:46.596 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:46.597 +03:00 [INF] Executed ViewResult - view Index executed in 1.8444ms.
+2026-05-18 13:57:46.597 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 12.092ms
+2026-05-18 13:57:46.597 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:46.597 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 16.4914ms
+2026-05-18 13:57:46.609 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:57:46.609 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1347ms
+2026-05-18 13:57:48.864 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-18 13:57:48.866 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:48.866 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:48.869 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:57:48.870 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-18 13:57:48.871 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-18 13:57:48.875 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:48.877 +03:00 [INF] Executed ViewResult - view Wallet executed in 5.8375ms.
+2026-05-18 13:57:48.877 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 10.641ms
+2026-05-18 13:57:48.877 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:48.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 12.994ms
+2026-05-18 13:57:48.892 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:57:48.892 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1315ms
+2026-05-18 13:57:58.394 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/TopUpBalance - application/x-www-form-urlencoded 235
+2026-05-18 13:57:58.397 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:58.403 +03:00 [INF] Route matched with {action = "TopUpBalance", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TopUpBalance(System.Decimal) on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:57:58.408 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:57:58.918 +03:00 [INF] Executing ViewResult, running view TopUpBalance.
+2026-05-18 13:57:58.925 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:57:58.926 +03:00 [INF] Executed ViewResult - view TopUpBalance executed in 8.2341ms.
+2026-05-18 13:57:58.926 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI) in 523.3178ms
+2026-05-18 13:57:58.926 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI)'
+2026-05-18 13:57:58.926 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/TopUpBalance - 200 null text/html; charset=utf-8 532.0849ms
+2026-05-18 13:57:58.959 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:57:58.959 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.27ms
+2026-05-18 13:58:47.859 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/IyzicoCallback - application/x-www-form-urlencoded 42
+2026-05-18 13:58:47.860 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-18 13:58:47.861 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-05-18 13:58:47.862 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/IyzicoCallback - 302 null null 2.9925ms
+2026-05-18 13:58:47.863 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FIyzicoCallback - null null
+2026-05-18 13:58:47.864 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:47.864 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-18 13:58:47.866 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-18 13:58:47.868 +03:00 [INF] Executed ViewResult - view Login executed in 1.6745ms.
+2026-05-18 13:58:47.868 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 4.1364ms
+2026-05-18 13:58:47.868 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:47.868 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FIyzicoCallback - 200 null text/html; charset=utf-8 4.9225ms
+2026-05-18 13:58:47.880 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:58:47.880 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1865ms
+2026-05-18 13:58:56.147 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 271
+2026-05-18 13:58:56.149 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:56.149 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-18 13:58:56.152 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-18 13:58:56.154 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-18 13:58:56.213 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2026-05-18 13:58:56.214 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-05-18 13:58:56.214 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-18 13:58:56.215 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2026-05-18 13:58:56.215 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-05-18 13:58:56.215 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Index.
+2026-05-18 13:58:56.215 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 66.0709ms
+2026-05-18 13:58:56.215 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:56.215 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 68.3166ms
+2026-05-18 13:58:56.221 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-18 13:58:56.221 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:56.221 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:58:56.222 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:58:56.223 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-18 13:58:56.223 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-18 13:58:56.224 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."IsFrozen", s."PlanId", s."RemainingFreezeCount", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND (s."IsActive" OR s."IsFrozen") AND s."EndDate" > now()
+2026-05-18 13:58:56.224 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-18 13:58:56.225 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__user_Id_0 AND NOT (n."IsRead")
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:58:56.225 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-18 13:58:56.225 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-18 13:58:56.225 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-18 13:58:56.226 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:58:56.227 +03:00 [INF] Executed ViewResult - view Index executed in 1.2778ms.
+2026-05-18 13:58:56.227 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 5.4977ms
+2026-05-18 13:58:56.227 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:56.227 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 6.1901ms
+2026-05-18 13:58:56.257 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:58:56.257 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.2394ms
+2026-05-18 13:58:57.578 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-18 13:58:57.579 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:57.579 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:58:57.582 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:58:57.583 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-18 13:58:57.583 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-18 13:58:57.586 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:58:57.587 +03:00 [INF] Executed ViewResult - view Wallet executed in 3.9955ms.
+2026-05-18 13:58:57.587 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 7.9727ms
+2026-05-18 13:58:57.588 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:58:57.588 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 10.195ms
+2026-05-18 13:58:57.604 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:58:57.605 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1452ms
+2026-05-18 13:59:05.998 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/TopUpBalance - application/x-www-form-urlencoded 235
+2026-05-18 13:59:06.000 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:06.000 +03:00 [INF] Route matched with {action = "TopUpBalance", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TopUpBalance(System.Decimal) on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:59:06.003 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:59:06.104 +03:00 [INF] Executing ViewResult, running view TopUpBalance.
+2026-05-18 13:59:06.107 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:59:06.109 +03:00 [INF] Executed ViewResult - view TopUpBalance executed in 4.4125ms.
+2026-05-18 13:59:06.109 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI) in 108.847ms
+2026-05-18 13:59:06.109 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:06.109 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/TopUpBalance - 200 null text/html; charset=utf-8 110.7981ms
+2026-05-18 13:59:06.139 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:59:06.140 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.638ms
+2026-05-18 13:59:14.373 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/IyzicoCallback - application/x-www-form-urlencoded 42
+2026-05-18 13:59:14.376 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.IyzicoCallback (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:14.383 +03:00 [INF] Route matched with {action = "IyzicoCallback", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] IyzicoCallback(System.String) on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:59:14.481 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__userId_0
+LIMIT 1
+2026-05-18 13:59:14.537 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Int32), @p2='?', @p0='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "WalletBalance" = @p0
+WHERE "Id" = @p1 AND "ConcurrencyStamp" = @p2;
+INSERT INTO "Transactions" ("Amount", "AppUserId", "Date", "Description", "IsExpense")
+VALUES (@p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2026-05-18 13:59:14.545 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Wallet.
+2026-05-18 13:59:14.546 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.IyzicoCallback (SubscriptionSystem.WebUI) in 162.2982ms
+2026-05-18 13:59:14.546 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.IyzicoCallback (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:14.546 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/IyzicoCallback - 302 null null 172.2ms
+2026-05-18 13:59:14.548 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-18 13:59:14.548 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:14.548 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:59:14.549 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:59:14.549 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-18 13:59:14.549 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-18 13:59:14.550 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:59:14.550 +03:00 [INF] Executed ViewResult - view Wallet executed in 0.8668ms.
+2026-05-18 13:59:14.550 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 1.9527ms
+2026-05-18 13:59:14.550 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:14.550 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 2.4293ms
+2026-05-18 13:59:14.572 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:59:14.572 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0913ms
+2026-05-18 13:59:50.466 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/Home/TopUpBalance - application/x-www-form-urlencoded 235
+2026-05-18 13:59:50.468 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:50.468 +03:00 [INF] Route matched with {action = "TopUpBalance", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TopUpBalance(System.Decimal) on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-18 13:59:50.470 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-18 13:59:50.573 +03:00 [INF] Executing ViewResult, running view TopUpBalance.
+2026-05-18 13:59:50.575 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT n."Id", n."AppUserId", n."CreatedAt", n."IsRead", n."Message", n."Title", n."Type"
+FROM "Notifications" AS n
+WHERE n."AppUserId" = @__userId_0
+ORDER BY n."CreatedAt" DESC
+LIMIT @__p_1
+2026-05-18 13:59:50.577 +03:00 [INF] Executed ViewResult - view TopUpBalance executed in 4.3875ms.
+2026-05-18 13:59:50.577 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI) in 109.2338ms
+2026-05-18 13:59:50.577 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.TopUpBalance (SubscriptionSystem.WebUI)'
+2026-05-18 13:59:50.577 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/Home/TopUpBalance - 200 null text/html; charset=utf-8 111.1898ms
+2026-05-18 13:59:50.608 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 13:59:50.608 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1346ms

@@ -1,0 +1,209 @@
+.packages-wrapper {
+    padding: 2rem;
+}
+
+.packages-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.packages-header h1 {
+    color: #4b3d7a;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.packages-header p {
+    color: #868e96;
+    font-size: 1.1rem;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid #e5dbff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(112, 72, 232, 0.1);
+    border-color: #7048e8;
+}
+
+.plan-card.popular {
+    border: 2px solid #7048e8;
+    background: #fdfcff;
+    scale: 1.05;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #7048e8;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.plan-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4b3d7a;
+    margin-bottom: 1.5rem;
+}
+
+.plan-price {
+    margin-bottom: 2rem;
+    color: #7048e8;
+}
+
+.plan-price .currency {
+    font-size: 1.5rem;
+    vertical-align: top;
+    font-weight: 600;
+}
+
+.plan-price .amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.plan-price .duration {
+    color: #868e96;
+    font-size: 1rem;
+}
+
+.plan-features {
+    margin-bottom: 2.5rem;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.plan-features p {
+    color: #5f3dc4;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.plan-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-features li {
+    padding: 8px 0;
+    color: #4b3d7a;
+    font-size: 0.95rem;
+}
+
+.plan-features li i {
+    color: #10b981;
+    margin-right: 10px;
+}
+
+.btn-subscribe {
+    width: 100%;
+    padding: 14px;
+    background: #7048e8;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-subscribe:hover {
+    background: #5f3dc4;
+    box-shadow: 0 8px 20px rgba(112, 72, 232, 0.3);
+}
+
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left; /* Tikler solda daha janti durur */
+}
+
+.package-features li {
+    color: #4b3d7a;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Modern Lila Tik İşareti */
+.package-features li::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: #7048e8;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: bold;
+    flex-shrink: 0; /* Tikin ezilmesini engeller */
+}
+
+/* Alt başlık (Gold Paket Satın Alın vb.) */
+.plan-subtitle {
+    color: #7048e8;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+}
+
+/* Tikli liste konteynırı */
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Maddeler ve Tikler */
+.package-features li {
+    color: #4b3d7a;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+/* Lila Tik İkonu (FontAwesome bağımlılığı olmadan CSS ile) */
+.package-features li::before {
+    content: '✔';
+    color: #7048e8;
+    font-weight: bold;
+    font-size: 1rem;
+}

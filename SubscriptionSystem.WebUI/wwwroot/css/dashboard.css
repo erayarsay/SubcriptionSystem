@@ -1,0 +1,287 @@
+.stats-grird{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card{
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    align-items: center;
+}
+
+.stat-card:hover{
+    transform: translateY(-5px);
+}
+
+.stat-icom{
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1.5rem !important;
+    flex-shrink: 0;
+}
+
+.stat-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-details h3{
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.stat-details span{
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.chart-container{
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    height: 300px; /* Grafiğe nefes alacak alan açalım */
+    width: 100%;
+}
+
+canvas#revenueChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.main-status-card {
+    /* Sidebarın o meşhur açık lila arka planı */
+    background: #f3f0ff; 
+    border-radius: 35px;
+    padding: 3rem;
+    /* Yazılar sidebar metinleri gibi koyu lila tonlarında */
+    color: #4b3d7a; 
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    /* Hafif derinlik için çok yumuşak gölge */
+    box-shadow: 0 10px 25px rgba(112, 72, 232, 0.05);
+    border: 1px solid rgba(112, 72, 232, 0.1);
+}
+
+.sub-active-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.sub-badge {
+    /* "Yayında" badge'ini sidebarın seçili menü rengi gibi yapıyoruz */
+    background: #7048e8;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sub-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 15px 0 5px 0;
+    /* Diamond Paketi yazısı mermi gibi patlasın */
+    color: #7048e8; 
+}
+
+.sub-timer-box {
+    /* Gün sayacı dairesini sidebarın ikon rengiyle mermi gibi vurguluyoruz */
+    background: #7048e8;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(112, 72, 232, 0.2);
+    color: white;
+}
+
+.timer-inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.day-num {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.day-text {
+    font-size: 0.7rem;
+    font-weight: 700;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.sub-empty-state {
+    text-align: center;
+    width: 100%;
+}
+
+.empty-icon-lila {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #7048e8;
+    animation: float 3s ease-in-out infinite;
+}
+
+.btn-lila-white {
+    /* Butonu sidebar ikon renginde yapıp yazısını beyaz yapıyoruz */
+    background: #7048e8;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.btn-lila-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(112, 72, 232, 0.3);
+}
+
+.vertical-sub-card {
+    background: #f3f0ff; /* Sidebar rengin usta */
+    border-radius: 30px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(112, 72, 232, 0.1);
+    transition: 0.3s;
+    min-width: 220px;
+}
+
+.vertical-sub-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(112, 72, 232, 0.1);
+}
+
+.sub-icon {
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+.vertical-sub-card .sub-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #7048e8;
+    margin-bottom: 20px;
+}
+
+.sub-info {
+    background: #7048e8;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.day-val {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.day-lbl {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.sub-footer {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Başlık ve Etiketlerin Lila Rengi */
+.modal-header-lila h2 {
+    color: #7048e8 !important;
+    font-weight: 850;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.detail-box label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #7048e8 !important; /* Etiketler artık lila usta */
+    font-weight: 800;
+    font-size: 0.8rem;
+    margin-bottom: 8px; /* Altına boşluk bıraktık */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* İstediğin o zarif çizgi (HR efekti) */
+.box-divider {
+    height: 1px;
+    background: #f3f0ff; /* Çok hafif bir lila çizgi */
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 1px;
+}
+
+.box-divider.lila {
+    background: rgba(112, 72, 232, 0.2); /* Kalan süre için biraz daha belirgin */
+}
+
+/* Kutucuk İçindeki Değer */
+.box-value {
+    color: #2d3436;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding-left: 5px;
+}
+
+/* Öne Çıkan Kalan Süre Metni */
+.lila-text {
+    color: #7048e8 !important;
+    font-weight: 900;
+}
+
+/* Modal kutusu için biraz daha yumuşak gölge */
+.lila-swal-popup {
+    box-shadow: 0 25px 50px rgba(112, 72, 232, 0.2) !important;
+}
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}

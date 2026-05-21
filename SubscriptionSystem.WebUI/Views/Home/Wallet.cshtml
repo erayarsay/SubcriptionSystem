@@ -1,0 +1,170 @@
+@model SubscriptionSystem.Domain.Entities.AppUser
+@using SubscriptionSystem.Domain.Entities
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/wallet.css" />
+    <style>
+        /* Ekstra lila dokunuşlar */
+        .custom-amount-group { margin-top: 15px; display: flex; gap: 10px; }
+        .input-lila { 
+            border: 2px solid #7048e8; border-radius: 10px; padding: 10px; 
+            flex: 1; outline: none; font-weight: 600; color: #4b3d7a;
+        }
+        .history-section { margin-top: 40px; background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 30px rgba(112, 72, 232, 0.05); }
+        
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .history-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .history-table th { text-align: left; padding: 12px; border-bottom: 2px solid #f3f0ff; color: #7048e8; }
+        .history-table td { padding: 15px 12px; border-bottom: 1px solid #f3f0ff; font-weight: 500; }
+        .text-success { color: #2ecc71; font-weight: 700; }
+        .text-danger { color: #e74c3c; font-weight: 700; }
+
+        .btn-pdf-download {
+            background: #f3f0ff;
+            color: #7048e8;
+            border: 2px solid #7048e8;
+            padding: 8px 18px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-pdf-download:hover {
+            background: #7048e8;
+            color: white;
+            box-shadow: 0 5px 15px rgba(112, 72, 232, 0.2);
+        }
+
+        /* Kupon Alanı Özel Tasarımı */
+        .coupon-card {
+            margin-top: 25px;
+            background: #f8f6ff;
+            border: 1px dashed #7048e8;
+            border-radius: 20px;
+            padding: 20px;
+        }
+    </style>
+}
+
+<div class="wallet-wrapper" data-aos="fade-up">
+    <div class="wallet-header">
+        <h1>Cüzdanım</h1>
+        <p>Bakiyenizi yönetin ve güvenli ödeme yapın.</p>
+    </div>
+
+    <div class="wallet-grid">
+        <div class="balance-card">
+            <div class="card-chip"></div>
+            <div class="balance-display">
+                <span class="label">Mevcut Bakiye</span>
+                <h2 class="amount">@Model.WalletBalance.ToString("N2") ₺</h2>
+            </div>
+            <div class="card-info">
+                <div class="holder">
+                    <span>Kart Sahibi</span>
+                    <strong>@Model.FullName</strong>
+                </div>
+                <div class="brand">VISA</div>
+            </div>
+        </div>
+
+        <div class="wallet-actions">
+            <div class="action-card">
+                <h3>Bakiye Yükle</h3>
+                <div class="topup-options">
+                    <button type="button" class="btn-lila-outline" onclick="setAmount(50)">50 ₺</button>
+                    <button type="button" class="btn-lila-outline" onclick="setAmount(100)">100 ₺</button>
+                    <button type="button" class="btn-lila-outline" onclick="setAmount(250)">250 ₺</button>
+                </div>
+
+                <form asp-action="TopUpBalance" method="post" asp-controller="Home">
+                    <div class="custom-amount-group">
+                        <input type="number" name="amount" id="amountInput" class="input-lila" placeholder="Tutar (₺)" min="1" step="0.01" required />
+                        <button type="submit" class="btn-lila-fill" style="margin:0; width: auto; padding: 0 25px;">
+                            Yükle
+                        </button>
+                    </div>
+                </form>
+
+                @* --- KUPON GİRİŞ ALANI (BURAYA EKLEDİK) --- *@
+                <div class="coupon-card shadow-sm">
+                    <h5 style="color: #7048e8; font-weight: 800; font-size: 0.95rem; margin-bottom: 15px;">
+                        <i class="fas fa-ticket-alt"></i> Promosyon Kodun mu Var?
+                    </h5>
+                    <form asp-action="UseCoupon" method="post" class="d-flex gap-2">
+                        @Html.AntiForgeryToken()
+                        <input type="text" name="couponCode" class="input-lila" placeholder="KODU YAZ" style="background: white;" required />
+                        <button type="submit" class="btn-lila-fill" style="margin-left:5px; width: auto; padding: 10px 30px;">
+                            Uygula
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="history-section" data-aos="fade-up">
+        <div class="history-header">
+            <h3 style="color: #4b3d7a; font-weight: 800; margin: 0;">İşlem Geçmişi</h3>
+            <a asp-action="DownloadTransactionHistory" class="btn-pdf-download">
+                <i class="fas fa-file-pdf"></i> PDF Raporu Al
+            </a>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Açıklama</th>
+                        <th>İşlem Tipi</th>
+                        <th>Miktar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Transactions != null)
+                    {
+                        foreach (var tx in (List<Transaction>)ViewBag.Transactions)
+                        {
+                            <tr>
+                                <td>@tx.Date.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>@tx.Description</td>
+                                <td>@(tx.IsExpense ? "Harcama" : "Yükleme")</td>
+                                <td class="@(tx.IsExpense ? "text-danger" : "text-success")">
+                                    @(tx.IsExpense ? "-" : "+") @tx.Amount.ToString("N2") ₺
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" style="text-align: center; opacity: 0.5;">Henüz bir işlem kaydı bulunmuyor.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function setAmount(val) {
+            document.getElementById('amountInput').value = val;
+        }
+    </script>
+}

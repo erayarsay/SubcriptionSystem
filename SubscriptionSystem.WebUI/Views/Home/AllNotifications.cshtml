@@ -1,0 +1,83 @@
+@using SubscriptionSystem.Domain.Entities
+@model List<Notification>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Bildirim Arşivi";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AllNotifications.css" />
+}
+
+<div class="archive-wrapper" data-aos="fade-up">
+    <div class="archive-header">
+        <div class="header-left">
+            <i class="fas fa-history archive-icon"></i>
+            <h2>Bildirim Geçmişim</h2>
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="btn-back">
+            <i class="fas fa-chevron-left"></i> Geri Dön
+        </a>
+    </div>
+
+    <div class="archive-card">
+        <div class="table-responsive">
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th class="ps-4">Tür</th>
+                        <th>Başlık</th>
+                        <th>Mesaj</th>
+                        <th>Tarih</th>
+                        <th class="pe-4 text-center">Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            @* Mesajı kurumsallaştıran filtre *@
+                            var seriousMessage = item.Message?
+                                .Replace(" usta", "")
+                                .Replace("Usta", "")
+                                .Trim();
+
+                            <tr class="@(item.IsRead ? "row-read" : "row-unread")">
+                                <td class="ps-4">
+                                    <span class="type-badge @(item.Type?.ToLower())">
+                                        <i class="fas fa-circle"></i> @item.Type?.ToUpper()
+                                    </span>
+                                </td>
+                                <td class="col-title">@item.Title</td>
+                                <td class="col-msg">@seriousMessage</td>
+                                <td class="col-date">@item.CreatedAt.ToString("dd MMM yyyy, HH:mm")</td>
+                                <td class="pe-4 text-center">
+                                    <div class="status-indicator">
+                                        @if (item.IsRead)
+                                        {
+                                            <i class="fas fa-check-double is-read" title="Okundu"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-envelope is-new" title="Yeni"></i>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="empty-state">
+                                <i class="fas fa-ghost"></i>
+                                <p>Henüz bir kayıt bulunmamaktadır.</p>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,681 @@
+2026-05-12 10:18:39.849 +03:00 [INF] User profile is available. Using '/Users/eraymac/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-12 10:18:40.181 +03:00 [ERR] An error occurred using the connection to database 'SubscriptionDb' on server 'tcp://localhost:5432'.
+2026-05-12 10:18:40.188 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'SubscriptionSystem.Persistence.Context.ApplicationDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-05-12 10:18:40.213 +03:00 [INF] Now listening on: http://localhost:5246
+2026-05-12 10:18:40.213 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 10:18:40.213 +03:00 [INF] Hosting environment: Development
+2026-05-12 10:18:40.213 +03:00 [INF] Content root path: /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI
+2026-05-12 10:18:40.398 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/ - null null
+2026-05-12 10:18:40.401 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-12 10:18:40.413 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:40.416 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:18:40.423 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:18:40.448 +03:00 [INF] Executed ViewResult - view Login executed in 24.7806ms.
+2026-05-12 10:18:40.449 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 32.4675ms
+2026-05-12 10:18:40.450 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:40.454 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/ - 200 null text/html; charset=utf-8 56.1637ms
+2026-05-12 10:18:40.457 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:18:40.457 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/LogReg.css - null null
+2026-05-12 10:18:40.458 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 1.525ms
+2026-05-12 10:18:40.460 +03:00 [INF] The file /css/LogReg.css was not modified
+2026-05-12 10:18:40.461 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/LogReg.css - 304 null text/css 4.5962ms
+2026-05-12 10:18:47.315 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 228
+2026-05-12 10:18:47.321 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:47.331 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:18:47.378 +03:00 [ERR] An error occurred using the connection to database 'SubscriptionDb' on server 'tcp://localhost:5432'.
+2026-05-12 10:18:47.379 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'SubscriptionSystem.Persistence.Context.ApplicationDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-05-12 10:18:47.382 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 51.0792ms
+2026-05-12 10:18:47.382 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:47.383 +03:00 [ERR] Sistem arızası nedeniyle işlem gerçekleşmedi! Hata Mesajı: An exception has been raised that is likely due to a transient failure. | Path: /
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+   at SubscriptionSystem.WebUI.Controllers.AccountController.Login(LoginDto dto, String returnUrl) in /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI/Controllers/AccountController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at SubscriptionSystem.WebUI.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI/Middleware/GlobalExceptionMiddleware.cs:line 24
+2026-05-12 10:18:47.391 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 75.9548ms
+2026-05-12 10:18:47.393 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Error?message=Sistemde+bir+ar%c4%b1za+olu%c5%9ftu.+L%c3%bctfen+internet+ba%c4%9flant%c4%b1n%c4%b1z%c4%b1+kontrol+edin+veya+daha+sonra+tekrar+deneyin. - null null
+2026-05-12 10:18:47.396 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-12 10:18:47.398 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-05-12 10:18:47.398 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Error?message=Sistemde+bir+ar%c4%b1za+olu%c5%9ftu.+L%c3%bctfen+internet+ba%c4%9flant%c4%b1n%c4%b1z%c4%b1+kontrol+edin+veya+daha+sonra+tekrar+deneyin. - 302 null null 4.1689ms
+2026-05-12 10:18:47.402 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - null null
+2026-05-12 10:18:47.402 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:47.402 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:18:47.405 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:18:47.406 +03:00 [INF] Executed ViewResult - view Login executed in 1.6226ms.
+2026-05-12 10:18:47.406 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 3.9414ms
+2026-05-12 10:18:47.406 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:47.406 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - 200 null text/html; charset=utf-8 4.5667ms
+2026-05-12 10:18:47.432 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:18:47.432 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.2664ms
+2026-05-12 10:18:55.513 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 228
+2026-05-12 10:18:55.515 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:55.515 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:18:55.533 +03:00 [ERR] An error occurred using the connection to database 'SubscriptionDb' on server 'tcp://localhost:5432'.
+2026-05-12 10:18:55.535 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'SubscriptionSystem.Persistence.Context.ApplicationDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-05-12 10:18:55.538 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 23.1959ms
+2026-05-12 10:18:55.538 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:55.538 +03:00 [ERR] Sistem arızası nedeniyle işlem gerçekleşmedi! Hata Mesajı: An exception has been raised that is likely due to a transient failure. | Path: /
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+   at SubscriptionSystem.WebUI.Controllers.AccountController.Login(LoginDto dto, String returnUrl) in /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI/Controllers/AccountController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at SubscriptionSystem.WebUI.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI/Middleware/GlobalExceptionMiddleware.cs:line 24
+2026-05-12 10:18:55.542 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 28.853ms
+2026-05-12 10:18:55.546 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Error?message=Sistemde+bir+ar%c4%b1za+olu%c5%9ftu.+L%c3%bctfen+internet+ba%c4%9flant%c4%b1n%c4%b1z%c4%b1+kontrol+edin+veya+daha+sonra+tekrar+deneyin. - null null
+2026-05-12 10:18:55.549 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-12 10:18:55.549 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-05-12 10:18:55.549 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Error?message=Sistemde+bir+ar%c4%b1za+olu%c5%9ftu.+L%c3%bctfen+internet+ba%c4%9flant%c4%b1n%c4%b1z%c4%b1+kontrol+edin+veya+daha+sonra+tekrar+deneyin. - 302 null null 3.1145ms
+2026-05-12 10:18:55.551 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - null null
+2026-05-12 10:18:55.551 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:55.552 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:18:55.552 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:18:55.553 +03:00 [INF] Executed ViewResult - view Login executed in 1.3827ms.
+2026-05-12 10:18:55.553 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 1.7672ms
+2026-05-12 10:18:55.553 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:18:55.553 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - 200 null text/html; charset=utf-8 2.4292ms
+2026-05-12 10:18:55.567 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:18:55.568 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.171ms
+2026-05-12 10:19:01.451 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-05-12 10:19:01.454 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 2.6755ms
+2026-05-12 10:19:01.454 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-05-12 10:19:12.311 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 228
+2026-05-12 10:19:12.311 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:19:12.311 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:19:12.316 +03:00 [ERR] An error occurred using the connection to database 'SubscriptionDb' on server 'tcp://localhost:5432'.
+2026-05-12 10:19:12.318 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'SubscriptionSystem.Persistence.Context.ApplicationDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-05-12 10:19:12.321 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 9.9944ms
+2026-05-12 10:19:12.322 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:19:12.322 +03:00 [ERR] Sistem arızası nedeniyle işlem gerçekleşmedi! Hata Mesajı: An exception has been raised that is likely due to a transient failure. | Path: /
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func`2 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+   at SubscriptionSystem.WebUI.Controllers.AccountController.Login(LoginDto dto, String returnUrl) in /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI/Controllers/AccountController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at SubscriptionSystem.WebUI.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.WebUI/Middleware/GlobalExceptionMiddleware.cs:line 24
+2026-05-12 10:19:12.326 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 15.7929ms
+2026-05-12 10:19:12.332 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Error?message=Sistemde+bir+ar%c4%b1za+olu%c5%9ftu.+L%c3%bctfen+internet+ba%c4%9flant%c4%b1n%c4%b1z%c4%b1+kontrol+edin+veya+daha+sonra+tekrar+deneyin. - null null
+2026-05-12 10:19:12.334 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-12 10:19:12.335 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-05-12 10:19:12.335 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Error?message=Sistemde+bir+ar%c4%b1za+olu%c5%9ftu.+L%c3%bctfen+internet+ba%c4%9flant%c4%b1n%c4%b1z%c4%b1+kontrol+edin+veya+daha+sonra+tekrar+deneyin. - 302 null null 2.907ms
+2026-05-12 10:19:12.338 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - null null
+2026-05-12 10:19:12.338 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:19:12.338 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:19:12.339 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:19:12.340 +03:00 [INF] Executed ViewResult - view Login executed in 1.0859ms.
+2026-05-12 10:19:12.340 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 1.9284ms
+2026-05-12 10:19:12.340 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:19:12.340 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - 200 null text/html; charset=utf-8 2.7487ms
+2026-05-12 10:19:12.357 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:19:12.357 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.2227ms
+2026-05-12 10:19:12.359 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-05-12 10:19:12.359 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 0.3689ms
+2026-05-12 10:19:12.359 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-05-12 10:20:13.248 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - null null
+2026-05-12 10:20:13.248 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:20:13.249 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:20:13.250 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:20:13.252 +03:00 [INF] Executed ViewResult - view Login executed in 3.1727ms.
+2026-05-12 10:20:13.253 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 3.4375ms
+2026-05-12 10:20:13.253 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:20:13.253 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - 200 null text/html; charset=utf-8 4.7286ms
+2026-05-12 10:20:13.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:20:13.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-05-12 10:20:13.265 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.4734ms
+2026-05-12 10:20:13.268 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.0758ms
+2026-05-12 10:20:13.268 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-05-12 10:20:13.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/favicon.ico - null null
+2026-05-12 10:20:13.275 +03:00 [INF] The file /favicon.ico was not modified
+2026-05-12 10:20:13.275 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/favicon.ico - 304 null image/x-icon 0.3097ms
+2026-05-12 10:20:48.313 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - null null
+2026-05-12 10:20:48.315 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:20:48.315 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:20:48.316 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:20:48.317 +03:00 [INF] Executed ViewResult - view Login executed in 1.5409ms.
+2026-05-12 10:20:48.318 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 2.649ms
+2026-05-12 10:20:48.318 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:20:48.318 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Account/Login?ReturnUrl=%2FHome%2FError%3Fmessage%3DSistemde%2Bbir%2Bar%25c4%25b1za%2Bolu%25c5%259ftu.%2BL%25c3%25bctfen%2Binternet%2Bba%25c4%259flant%25c4%25b1n%25c4%25b1z%25c4%25b1%2Bkontrol%2Bedin%2Bveya%2Bdaha%2Bsonra%2Btekrar%2Bdeneyin. - 200 null text/html; charset=utf-8 5.0007ms
+2026-05-12 10:20:48.332 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:20:48.332 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1588ms
+2026-05-12 10:20:48.332 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-05-12 10:20:48.332 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 0.2252ms
+2026-05-12 10:20:48.332 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-05-12 10:20:53.715 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 229
+2026-05-12 10:20:53.716 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:20:53.723 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:20:53.844 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-12 10:20:53.879 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-12 10:20:53.913 +03:00 [INF] Executing ViewResult, running view Login.
+2026-05-12 10:20:53.914 +03:00 [INF] Executed ViewResult - view Login executed in 0.4027ms.
+2026-05-12 10:20:53.914 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 190.9426ms
+2026-05-12 10:20:53.914 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:20:53.914 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 200 null text/html; charset=utf-8 199.0351ms
+2026-05-12 10:20:53.943 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-05-12 10:20:53.943 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:20:53.943 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 0.5377ms
+2026-05-12 10:20:53.943 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.2597ms
+2026-05-12 10:20:53.943 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-05-12 10:21:01.405 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5246/ - application/x-www-form-urlencoded 228
+2026-05-12 10:21:01.406 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:01.406 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SubscriptionSystem.Application.DTOs.LoginDto, System.String) on controller SubscriptionSystem.WebUI.Controllers.AccountController (SubscriptionSystem.WebUI).
+2026-05-12 10:21:01.410 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-05-12 10:21:01.413 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-05-12 10:21:01.491 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2026-05-12 10:21:01.501 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-05-12 10:21:01.502 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-05-12 10:21:01.508 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2026-05-12 10:21:01.509 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-05-12 10:21:01.509 +03:00 [INF] Executing RedirectResult, redirecting to /Home/Index.
+2026-05-12 10:21:01.509 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI) in 103.1361ms
+2026-05-12 10:21:01.509 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.AccountController.Login (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:01.509 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5246/ - 302 null null 104.026ms
+2026-05-12 10:21:01.515 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Index - null null
+2026-05-12 10:21:01.516 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:01.518 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-12 10:21:01.527 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-12 10:21:01.540 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2026-05-12 10:21:01.543 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2026-05-12 10:21:01.559 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AppUserId", s."AutoRenew", s."CreateDate", s."EndDate", s."IsActive", s."IsDeleted", s."PlanId", s."StartDate", s."UpdatedDate", p."Id", p."CreateDate", p."Description", p."DuraitonInMonths", p."IsDeleted", p."IsPopular", p."OrderIndex", p."Price", p."SubTitle", p."Title", p."UpdatedDate"
+FROM "Subscriptions" AS s
+INNER JOIN "Plans" AS p ON s."PlanId" = p."Id"
+WHERE s."AppUserId" = @__user_Id_0 AND s."IsActive" AND s."EndDate" > now()
+2026-05-12 10:21:01.586 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Int32), @__First_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__user_Id_0 AND t."IsExpense" AND t."Date" >= @__First_1
+2026-05-12 10:21:01.600 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "AspNetUsers" AS a
+2026-05-12 10:21:01.603 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__First_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE NOT (t."IsExpense") AND t."Date" >= @__First_0
+2026-05-12 10:21:01.604 +03:00 [INF] Executing ViewResult, running view Index.
+2026-05-12 10:21:01.623 +03:00 [INF] Executed ViewResult - view Index executed in 19.3651ms.
+2026-05-12 10:21:01.623 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI) in 105.1048ms
+2026-05-12 10:21:01.623 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Index (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:01.623 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Index - 200 null text/html; charset=utf-8 108.0056ms
+2026-05-12 10:21:01.649 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-05-12 10:21:01.653 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/main.css - null null
+2026-05-12 10:21:01.653 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.7602ms
+2026-05-12 10:21:01.653 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5246/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-05-12 10:21:01.653 +03:00 [INF] The file /css/main.css was not modified
+2026-05-12 10:21:01.653 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/main.css - 304 null text/css 0.2732ms
+2026-05-12 10:21:01.654 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/layout.css - null null
+2026-05-12 10:21:01.654 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/dashboard.css - null null
+2026-05-12 10:21:01.654 +03:00 [INF] The file /css/layout.css was not modified
+2026-05-12 10:21:01.654 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/layout.css - 304 null text/css 0.2438ms
+2026-05-12 10:21:01.654 +03:00 [INF] The file /css/dashboard.css was not modified
+2026-05-12 10:21:01.654 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/dashboard.css - 304 null text/css 0.1682ms
+2026-05-12 10:21:01.655 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/img/profiles/ed31b770-d3c7-4dd7-bba9-944732bcc65c.png - null null
+2026-05-12 10:21:01.655 +03:00 [INF] The file /img/profiles/ed31b770-d3c7-4dd7-bba9-944732bcc65c.png was not modified
+2026-05-12 10:21:01.655 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/img/profiles/ed31b770-d3c7-4dd7-bba9-944732bcc65c.png - 304 null image/png 0.229ms
+2026-05-12 10:21:01.655 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:21:01.655 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1147ms
+2026-05-12 10:21:10.586 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-12 10:21:10.593 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:10.599 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-12 10:21:10.603 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-12 10:21:10.615 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-12 10:21:10.617 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-12 10:21:10.627 +03:00 [INF] Executed ViewResult - view Wallet executed in 10.6112ms.
+2026-05-12 10:21:10.628 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 28.8111ms
+2026-05-12 10:21:10.628 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:10.628 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 41.3115ms
+2026-05-12 10:21:10.646 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:21:10.647 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.2932ms
+2026-05-12 10:21:10.647 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/css/wallet.css - null null
+2026-05-12 10:21:10.647 +03:00 [INF] The file /css/wallet.css was not modified
+2026-05-12 10:21:10.647 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/css/wallet.css - 304 null text/css 0.3853ms
+2026-05-12 10:21:41.905 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-12 10:21:41.905 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:41.907 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-12 10:21:41.909 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-12 10:21:41.910 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-12 10:21:41.910 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-12 10:21:41.917 +03:00 [INF] Executed ViewResult - view Wallet executed in 7.0058ms.
+2026-05-12 10:21:41.917 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 9.7042ms
+2026-05-12 10:21:41.917 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:41.917 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 12.0609ms
+2026-05-12 10:21:41.931 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:21:41.932 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1345ms
+2026-05-12 10:21:50.915 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-12 10:21:50.916 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:50.918 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-12 10:21:50.919 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-12 10:21:50.919 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-12 10:21:50.919 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-12 10:21:50.927 +03:00 [INF] Executed ViewResult - view Wallet executed in 7.8804ms.
+2026-05-12 10:21:50.927 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 9.2757ms
+2026-05-12 10:21:50.927 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:50.927 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 12.7295ms
+2026-05-12 10:21:50.936 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:21:50.936 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.0916ms
+2026-05-12 10:21:57.643 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-12 10:21:57.644 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:57.646 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-12 10:21:57.647 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-12 10:21:57.647 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-12 10:21:57.648 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-12 10:21:57.656 +03:00 [INF] Executed ViewResult - view Wallet executed in 8.3571ms.
+2026-05-12 10:21:57.656 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 9.7515ms
+2026-05-12 10:21:57.656 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:21:57.656 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 12.7265ms
+2026-05-12 10:21:57.673 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:21:57.673 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1318ms
+2026-05-12 10:22:17.771 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/Home/Wallet - null null
+2026-05-12 10:22:17.772 +03:00 [INF] Executing endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:22:17.775 +03:00 [INF] Route matched with {action = "Wallet", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Wallet() on controller SubscriptionSystem.WebUI.Controllers.HomeController (SubscriptionSystem.WebUI).
+2026-05-12 10:22:17.775 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FullName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."ProfilePicture", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."WalletBalance"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2026-05-12 10:22:17.776 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Amount", t."AppUserId", t."Date", t."Description", t."IsExpense"
+FROM "Transactions" AS t
+WHERE t."AppUserId" = @__userId_0
+ORDER BY t."Date" DESC
+2026-05-12 10:22:17.777 +03:00 [INF] Executing ViewResult, running view Wallet.
+2026-05-12 10:22:17.785 +03:00 [INF] Executed ViewResult - view Wallet executed in 8.6555ms.
+2026-05-12 10:22:17.785 +03:00 [INF] Executed action SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI) in 10.3253ms
+2026-05-12 10:22:17.785 +03:00 [INF] Executed endpoint 'SubscriptionSystem.WebUI.Controllers.HomeController.Wallet (SubscriptionSystem.WebUI)'
+2026-05-12 10:22:17.785 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/Home/Wallet - 200 null text/html; charset=utf-8 14.0085ms
+2026-05-12 10:22:17.798 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-12 10:22:17.798 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5246/_framework/aspnetcore-browser-refresh.js - 200 14543 application/javascript; charset=utf-8 0.1328ms

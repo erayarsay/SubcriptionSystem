@@ -1,0 +1,45 @@
+@using SubscriptionSystem.Domain.Entities
+@model Subscription
+
+@{
+    ViewData["Title"] = "Yeni Abonelik";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Yeni Abonelik Oluştur</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label class="form-label">Kullanıcı ID (AppUserId)</label>
+                            <input asp-for="AppUserId" name="AppUserId" class="form-control" type="number" placeholder="Örn: 1" />
+                            <span asp-validation-for="AppUserId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label font-weight-bold">Abonelik Planı Seçiniz</label>
+                            <select asp-for="PlanId" class="form-select border-primary" asp-items="ViewBag.Plans">
+                                <option value="">-- Lütfen bir paket seçin --</option>
+                            </select>
+                            <span asp-validation-for="PlanId" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Aboneliği Başlat</button>
+                            <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

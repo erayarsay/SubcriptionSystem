@@ -1,0 +1,192 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@using Microsoft.AspNetCore.Identity
+@using SubscriptionSystem.Domain.Entities
+@using SubscriptionSystem.Application.Interfaces
+@inject UserManager<AppUser> UserManager
+@inject INotificationService NotificationService
+@{
+    // Bu kısım sayesinde her sayfa açıldığında isim, PP ve bildirimler otomatik çekilir.
+    var user = await UserManager.GetUserAsync(User);
+    var fullName = user?.FullName ?? "Kullanıcı";
+    var profilePic = !string.IsNullOrEmpty(user?.ProfilePicture) ? user.ProfilePicture : "default-avatar.png";
+    
+    // Çan için bildirimleri servisten çekiyoruz
+    var notifications = user != null ? await NotificationService.GetUserNotificationsAsync(user.Id) : new List<Notification>();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription System</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    
+    @* Toast ve Genel Stiller *@
+    <style>
+        #toast-container {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 10000;
+        }
+
+        .lila-toast {
+            min-width: 320px;
+            background: white;
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(112, 72, 232, 0.15);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 6px solid #7048e8;
+            transform: translateX(120%);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            color: #4b3d7a;
+            font-weight: 600;
+        }
+
+        .lila-toast.show { transform: translateX(0); }
+        .lila-toast.error { border-left-color: #ff4757; }
+        .lila-toast.success { border-left-color: #2ed573; }
+
+        .toast-icon { font-size: 1.2rem; }
+
+    .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #7048e8;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+    width: 25px; 
+    text-align: center;
+}
+
+.nav-link.active {
+    background: #f3f0ff;
+    color: #7048e8;
+    font-weight: 600;
+}
+    </style>
+
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <div id="toast-container"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="logo">SUBS SYSTEM</div>
+            <ul class="nav-links">
+                <li class="nav-items @(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">
+                    <a asp-controller="Home" asp-action="Index" style="color: inherit; text-decoration: none; display: block; width: 100%;">
+                        <i class="fas fa-home" style="margin-right: 10px;"></i> Ana Sayfa
+                    </a>
+                </li>
+                
+                <li class="nav-items @(ViewContext.RouteData.Values["Action"]?.ToString() == "Wallet" ? "active" : "")">
+                    <a asp-controller="Home" asp-action="Wallet" style="color: inherit; text-decoration: none; display: block; width: 100%;">
+                        <i class="fas fa-wallet" style="margin-right: 10px;"></i> Cüzdanım
+                    </a>
+                </li>
+                
+                <li class="nav-items @(ViewContext.RouteData.Values["Action"]?.ToString() == "Packages" ? "active" : "")">
+                    <a asp-controller="Home" asp-action="Packages" style="color: inherit; text-decoration: none; display: block; width: 100%;">
+                        <i class="fas fa-box" style="margin-right: 10px;"></i> Paketler
+                    </a>
+                </li>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-items @(ViewContext.RouteData.Values["Action"]?.ToString() == "ManagePlans" ? "active" : "")">
+                        <a asp-controller="Home" asp-action="ManagePlans" style="color: inherit; text-decoration: none; display: block; width: 100%;">
+                            <i class="fas fa-tasks" style="margin-right: 10px;"></i> Yönetim
+                        </a>
+                    </li>
+                }
+
+                <li>
+                    <a asp-action="Profile" asp-controller="Home" 
+                    class="nav-link @(ViewContext.RouteData.Values["Action"]?.ToString() == "Profile" ? "active" : "")">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Profilim</span>
+                    </a>
+                </li>
+
+                <li class="nav-item logout-item" style="margin-top: auto;">
+                    <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link" style="color: #ff4757; font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-door-open"></i>
+                            <span>Çıkış Yap</span>
+                        </a>
+                    </form>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `lila-toast ${type}`;
+            const icon = type === 'success' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
+            toast.innerHTML = `<span class="toast-icon">${icon}</span><span class="toast-message">${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
+    </script>
+
+    @if (TempData["Success"] != null)
+    {
+        <script>showToast('@Html.Raw(TempData["Success"])', 'success');</script>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <script>showToast('@Html.Raw(TempData["Error"])', 'error');</script>
+    }
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+        <div style="background:white; padding:30px; border-radius:20px; text-align:center; min-width:300px;">
+            <h2 id="confirmTitle" style="color:#7048e8;"></h2>
+            <p id="confirmMessage" style="margin:20px 0;"></p>
+            <div style="display:flex; gap:10px; justify-content:center;">
+                <button id="confirmBtn" style="background:#7048e8; color:white; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">Onayla</button>
+                <button onclick="closeConfirmModal()" style="background:#eee; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">Vazgeç</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

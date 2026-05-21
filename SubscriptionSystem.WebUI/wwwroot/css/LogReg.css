@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    /* Sidebar'daki o ferah lila tonuyla uyumlu arka plan */
+    background: #f8f7ff; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    /* Sidebar'ın o "pamuk" beyazımsı lila rengi */
+    background: #ffffff; 
+    padding: 40px;
+    border-radius: 16px;
+    /* Çok hafif morumsu bir gölge, derinlik katsın */
+    box-shadow: 0 10px 30px rgba(112, 72, 232, 0.1); 
+    border: 1px solid #e5dbff;
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    /* Okunabilirlik için koyu mor/füme tonu */
+    color: #4b3d7a; 
+}
+
+.auth-card p {
+    text-align: center;
+    color: #868e96;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5f3dc4; /* Sidebar link rengiyle aynı */
+    font-size: 0.85rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #ffffff;
+    border: 1px solid #e5dbff;
+    border-radius: 8px;
+    color: #4b3d7a;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #7048e8;
+    background: #f3f0ff;
+    box-shadow: 0 0 0 4px rgba(112, 72, 232, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    /* Sidebar'daki baskın lila tonu */
+    background: #7048e8; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #5f3dc4;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(112, 72, 232, 0.2);
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #868e96;
+}
+
+.auth-footer a {
+    text-decoration: none;
+    color: #7048e8;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    color: #5f3dc4;
+    text-decoration: underline;
+}
+
+/* Hata mesajları */
+.text-danger {
+    color: #fa5252;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}

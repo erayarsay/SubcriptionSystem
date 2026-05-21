@@ -1,0 +1,17 @@
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Application.deps.json
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Application.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Application.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Domain.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Persistence.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Domain.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/bin/Debug/net10.0/SubscriptionSystem.Persistence.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.csproj.AssemblyReference.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.AssemblyInfoInputs.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.AssemblyInfo.cs
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.csproj.CoreCompileInputs.cache
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/Subscrip.780ACB8A.Up2Date
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/refint/SubscriptionSystem.Application.dll
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/SubscriptionSystem.Application.pdb
+/Users/eraymac/Desktop/SubcriptionSystem/SubscriptionSystem.Application/obj/Debug/net10.0/ref/SubscriptionSystem.Application.dll
