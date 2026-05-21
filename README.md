@@ -1,12 +1,12 @@
 # 🚀 Advanced Subscription & Invoice Management System (SaaS)
 
-Bu proje, **Kodpit Teknoloji A.Ş.** bünyesinde gerçekleştirilen bilgisayar programcılığı stajı kapsamında geliştirilmiş; modern, katmanlı mimariye (Layered/Onion Architecture) sahip kurumsal bir **Abonelik ve Faturalandırma Yönetim Sistemi** simülasyonudur. Projenin arayüzünde kullanıcı deneyimini artırmak adına fütüristik, estetik ve koyu/neon çizgiler barındıran modern bir tasarım dili tercih edilmiştir.
+Bu proje, **SubcriptionSystem** bünyesinde gerçekleştirilen bilgisayar programcılığı stajı kapsamında geliştirilmiş; modern, katmanlı mimariye (Layered/Onion Architecture) sahip kurumsal bir **Abonelik ve Faturalandırma Yönetim Sistemi** simülasyonudur. Projenin arayüzünde kullanıcı deneyimini artırmak adına fütüristik, estetik ve koyu/neon çizgiler barındıran modern bir tasarım dili tercih edilmiştir.
 
 ---
 
 ## 🏗️ Mimari Yapı (Architecture)
 
-Proje, iş kurallarının (Business Logic) arayüzden ve veri tabanından tamamen bağımsız olmasını sağlayan **Katmanlı Mimari (Layered Architecture)** prensiplerine uygun olarak Clean Code standartlarında geliştirilmiştir:
+Proje, iş kurallarının (Business Logic) arayüzden ve veri tabanından tamamen bağımsız olmasını sağlayan **Katmanlı Mimari (Layered Architecture)** prenspilerine uygun olarak Clean Code standartlarında geliştirilmiştir:
 
 * **Domain:** Çekirdek varlıkların (Entities) ve veri yapılarının (AppUser, Subscription, Plan, Transaction, Notification) yer aldığı katman.
 * **Application / Services:** Finansal hesaplamaların, abonelik iş kurallarının ve iş mantığının döndüğü ana motor katmanı.
@@ -41,11 +41,11 @@ Kullanıcı ad, e-posta ve fotoğrafını tek bir buton tetiklemesiyle güncelle
 
 ## 🧰 Teknoloji Yığını (Tech Stack)
 
-* **Backend:** .NET Core 8, Entity Framework Core (Code-First)
-* **Veritabanı:** SQLite (Hafif, taşınabilir ve sunucu bağımsız)
+* **Backend:** .NET 9.0.2, Entity Framework Core (Code-First)
+* **Veritabanı:** PostgreSQL (İleri seviye ilişkisel veritabanı yönetimi)
 * **Güvenlik & Oturum:** Microsoft ASP.NET Core Identity, BCrypt Hashing
 * **Ödeme Geçidi:** iyzico API integration
-* **Frontend:** HTML5, CSS3, JavaScript, Bootstrap, FontAwesome, AOS (Animate on Scroll)
+* **Frontend:** HTML5, CSS3, JavaScript, AOS (Animate on Scroll)
 
 ---
 
@@ -53,6 +53,16 @@ Kullanıcı ad, e-posta ve fotoğrafını tek bir buton tetiklemesiyle güncelle
 
 Projeyi yerel bilgisayarınızda ayağa kaldırmak için aşağıdaki adımları takip edebilirsiniz:
 
-1. Projeyi bilgisayarınıza klonlayın:
+1. Projeyi bilgisayarınıza indirin ve zip dosyasından çıkarın.
+
+2. `appsettings.json` dosyasındaki `ConnectionStrings` alanını kendi **PostgreSQL** sunucu bilgilerinizle güncelleyin.
+
+3. Proje ana dizininde terminali açın:
    ```bash
-   git clone <github-repo-linkiniz>
+   dotnet restore
+
+4. Veritabanı migration'larını uygulayın (PostgreSQL tabloları otomatik oluşacaktır):
+   dotnet ef database update
+
+5.Projeyi canlı izleme moduyla çalıştırın:
+   dotnet watch run --project SubscriptionSystem.WebUI
